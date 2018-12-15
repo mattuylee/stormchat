@@ -8,7 +8,7 @@ import (
 //用户信息
 type UserInfo struct {
 	User     string //用户名
-	Nickname string //昵称
+	NickName string //昵称
 	Motto    string //签名
 	UGroup   string //用户组。ugroup_*常量值
 }
@@ -16,7 +16,7 @@ type UserInfo struct {
 //根据用户名查询一个用户。如果用户不存在则返回nil
 func QueryUserInfo(userName string) *UserInfo {
 	user := new(UserInfo)
-	err := server.db.QueryRow(str_sql_query_user, userName).Scan(&user.User, &user.Nickname, &user.Motto, &user.UGroup)
+	err := server.db.QueryRow(str_sql_query_user, userName).Scan(&user.User, &user.NickName, &user.Motto, &user.UGroup)
 	if err != nil {
 		return nil
 	} else {
@@ -41,7 +41,7 @@ func GetUserPhoto(userName string) []byte {
 //登录，成功返回用户信息，失败返回nil
 func Login(userName string, pwd string) *UserInfo {
 	user := new(UserInfo)
-	err := server.db.QueryRow(str_sql_login, userName, pwd).Scan(&user.User, &user.Nickname, &user.Motto, &user.UGroup)
+	err := server.db.QueryRow(str_sql_login, userName, pwd).Scan(&user.User, &user.NickName, &user.Motto, &user.UGroup)
 	if err != nil {
 		if err.Error() == "sql: no rows in result set" {
 			Debug(err.Error())
@@ -65,7 +65,7 @@ func GetUserList() []UserInfo {
 	}
 	for rows.Next() {
 		user := new(UserInfo)
-		scanErr := rows.Scan(&user.User, &user.Nickname, &user.Motto, &user.UGroup)
+		scanErr := rows.Scan(&user.User, &user.NickName, &user.Motto, &user.UGroup)
 		if scanErr != nil {
 			WriteLog("Database Error - Scan Error:  " + scanErr.Error())
 			return nil

@@ -222,7 +222,7 @@ func (session *Session) MessageHandler(headInfo map[string]string, msg []byte) {
 			result["Error"] = "The message doesn't has a valid receiver."
 		} //消息接收者不存在
 	}
-	if _, ok := headInfo["NeedResult"]; ok {
+	if needResult, ok := headInfo["NeedResult"]; ok && needResult != "0" {
 		session.SendData(result, nil)
 	} //返回执行结果
 }
