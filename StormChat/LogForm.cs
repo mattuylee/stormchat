@@ -36,16 +36,17 @@ namespace StormChat
 		}
 		
 		//登录结果处理
-		private void LoginDone(JObject head, User user)
+		private void LoginDone(ResultHead head, User user)
 		{
 			Action f = delegate ()
 			{
 				btnLogin.Enabled = true;
-				if (head[Strings.Error].ToString() != "")
+				if (head.Error != "")
 				{
-					MessageBox.Show("登录失败：" + head[Strings.Error].ToString());
+					MessageBox.Show("登录失败：" + head.Error);
 					return;
 				}
+				User.Me = user;
 				_mainForm.Opacity = 1;
 				_mainForm.Show();
 				this.Close();

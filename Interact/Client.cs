@@ -6,21 +6,59 @@ using System.Net.Sockets;
 using System.Net;
 using System.Threading;
 using System.Collections.Concurrent;
-using Newtonsoft.Json.Linq;
+using System.Drawing;
 
 namespace Interact
 {
 	//连接中断
 	public delegate void DisconnectHandler(Exception ex);
+	//通用请求结果处理
+	public delegate void ResultHandler(ResultHead head);
+	//消息到达事件处理
+	public delegate void MessageHandler(Message msg);
 	//登录反馈到达
-	public delegate void LoginDoneHandler(JObject head, User user);
+	public delegate void LoginDoneHandler(ResultHead head, User user);
+	//获取用户列表结果处理
+	public delegate void GetUserListDoneHandler(ResultHead head, User[] users);
+	//获取用户头像结果处理
+	public delegate void GetUserPhotoDoneHandler(ResultHead head, Image image);
 
+
+	/// <summary>
+	/// 与服务器进行数据通信，并向外部提供一系列通信接口
+	/// </summary>
 	public static partial class StormClient
 	{
 		//连接中断事件
 		public static event DisconnectHandler OnDisconnect;
+		//服务器异常消息处理事件
+		public static event ResultHandler OnPanic;
+		//服务器强制注销登陆事件
+		public static event ResultHandler OnOffline;
+		//消息到达事件
+		public static event MessageHandler OnMessage;
+		//发送消息处理完成反馈事件（仅在DoesSendMessageReturn为true时有效）
+		public static event ResultHandler OnSendMessageDone;
+		//更新用户信息结果处理事件
+		public static event ResultHandler OnUpdateUserInfoDone;
 		//登录结果处理事件
 		public static event LoginDoneHandler OnLoginDone;
+		//获取用户列表结果处理事件
+		public static event GetUserListDoneHandler OnGetUserListDone;
+		//获取用户头像结果处理事件
+		public static event GetUserPhotoDoneHandler OnGetUserPhotoDoneHandler;
+		//发送消息时是否要求服务器返回处理结果
+		public static bool DoesSendMessageReturn
+		{
+			get
+			{
+				return doesSendMessageReturn != 0;
+			}
+			set
+			{
+				Interlocked.Exchange(ref StormClient.doesSendMessageReturn, value ? 1 : 0);
+			}
+		}
 
 		//TCP客户端
 		private static TcpClient tcpClient;
@@ -30,12 +68,15 @@ namespace Interact
 		private static Thread readLoopThread;
 		//数据发送线程
 		private static Thread sendLoopThread;
+		//发送消息时是否要求服务器返回处理结果
+		private static volatile int doesSendMessageReturn = 0;
 
 		static StormClient()
 		{
 			tcpClient = new TcpClient();
 			sendQueue = new BlockingCollection<Packet>();
 		}
+
 		/// <summary>
 		/// 初始化客户端，连接服务器。如果成功则启动数据接收和发送线程
 		/// </summary>
@@ -62,7 +103,7 @@ namespace Interact
 		}
 
 		/// <summary>
-		/// 登录。此操作为异步操作，完成后产生OnLoginDone事件。
+		/// 登录。此操作为异步操作，服务器返回结果后产生OnLoginDone事件。
 		/// </summary>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		/// <param name="user">用户名</param>
