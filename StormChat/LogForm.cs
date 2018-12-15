@@ -32,7 +32,7 @@ namespace StormChat
 				return;
 			}
 			btnLogin.Enabled = false;
-			StormClient.RequestLogin(txtUser.Text, txtPassword.Text);
+			StormClient.QueueLogin(txtUser.Text, txtPassword.Text);
 		}
 		
 		//登录结果处理
