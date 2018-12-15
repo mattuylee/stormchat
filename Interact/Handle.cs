@@ -14,10 +14,10 @@ namespace Interact
 		{
 			string head = Encoding.UTF8.GetString(headData);
 			JObject jsonObj = (JObject)JsonConvert.DeserializeObject(head);
-			switch ((Operations)Enum.Parse(typeof(Operations), jsonObj[Strings.Operation].ToString()))
+			switch ((Operations)Enum.Parse(typeof(Operations), jsonObj[AttrNames.Operation].ToString()))
 			{
 			case Operations.Login:
-				HandleLoginResult(jsonObj, data);
+				HandleLoginResult(GetResultHead(jsonObj), data);
 				break;
 			case Operations.Panic:
 			case Operations.TransMessage:
@@ -32,14 +32,37 @@ namespace Interact
 				break;
 			}
 		}
-		//处理登录反馈消息
-		private static void HandleLoginResult(JObject head, byte[] data)
+
+		//提取基本结果包头结构
+		private static ResultHead GetResultHead(JObject head)
 		{
-			User user = null;
-			if (head[Strings.Error].ToString() == "")
-				user = JsonConvert.DeserializeObject<User>(Encoding.UTF8.GetString(data)) as User;
+			ResultHead resultHead = new ResultHead
+			{
+				Token = head[AttrNames.Token].ToString(),
+				Operation = head[AttrNames.Operation].ToString(),
+				Error = head[AttrNames.Error].ToString()
+			};
+			return resultHead;
+		}
+
+		//处理登录反馈消息
+		private static void HandleLoginResult(ResultHead head, byte[] data)
+		{
+			//发起登录完成事件
+			if (head.Error != "")
+				OnLoginDone?.Invoke(head, null);
+			JObject dataObj = (JObject)JsonConvert.SerializeObject(data);
+			User user = new User
+			{
+				Name = dataObj[AttrNames.User].ToString(),
+				NickName = dataObj[AttrNames.NickName].ToString(),
+				Motto = dataObj[AttrNames.Motto].ToString(),
+				Group = (UserGroup)Enum.Parse(typeof(UserGroup), dataObj[AttrNames.UGroup].ToString())
+			};
 			OnLoginDone?.Invoke(head, user);
 		}
+
+
 	}
 
 }

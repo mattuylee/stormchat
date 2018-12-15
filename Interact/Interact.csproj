@@ -36,6 +36,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,7 +56,7 @@
     </Compile>
     <Compile Include="Read.cs" />
     <Compile Include="Send.cs" />
-    <Compile Include="Strings.cs" />
+    <Compile Include="AttrNames.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
