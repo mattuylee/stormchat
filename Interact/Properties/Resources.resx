@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="RemoteServerAddr" xml:space="preserve">
-    <value>localhost</value>
+    <value>mattuy.top</value>
   </data>
   <data name="RemoteServerPort" xml:space="preserve">
     <value>3727</value>
