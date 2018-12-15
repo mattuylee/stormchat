@@ -61,7 +61,7 @@ namespace Interact.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to localhost.
+        ///   Looks up a localized string similar to mattuy.top.
         /// </summary>
         internal static string RemoteServerAddr {
             get {

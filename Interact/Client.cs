@@ -105,11 +105,11 @@ namespace Interact
 		/// <summary>
 		/// 登录。此操作为异步操作，服务器返回结果后产生OnLoginDone事件。
 		/// </summary>
-		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		/// <param name="user">用户名</param>
 		/// <param name="password">密码</param>
-		/// <param name="callback">数据发送完成回调函数。注意，结果处理回调请设置OnLoginDone事件</param>
-		public static bool RequestLogin(string user, string password, Action<BaseHead> callback = null)
+		/// <param name="callback">数据发送完毕回调函数。注意，结果处理回调请设置OnLoginDone事件</param>
+		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
+		public static bool QueueLogin(string user, string password, Action<BaseHead> callback = null)
 		{
 			JsonLogInfoHead logInfo = new JsonLogInfoHead()
 			{
@@ -126,6 +126,48 @@ namespace Interact
 			};
 			return Send(packet);
 		}
+		
+		/// <summary>
+		/// 请求发送一条消息。异步，此方法将请求放入请求队列后返回。
+		/// </summary>
+		/// <param name="text">要发送的消息文本</param>
+		/// <param name="to">消息接收者</param>
+		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
+		public static bool QueueSendMessage(string text, User to, Action<BaseHead> callback = null)
+		{ return false; }
+		/// <summary>
+		/// 请求登出。异步，此方法将请求放入请求队列后返回。
+		/// </summary>
+		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 
+		public static bool QueueLogout(Action<BaseHead> callback = null)
+		{ return false; }
+		/// <summary>
+		/// 请求用户列表。异步，此方法将请求放入请求队列后返回。
+		/// </summary>
+		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
+
+		public static bool QueueGetUserList(Action<BaseHead> callback = null)
+		{ return false; }
+		/// <summary>
+		/// 请求更新当前登录用户信息。异步，此方法将请求放入请求队列后返回。
+		/// </summary>
+		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
+
+		public static bool QueueUpdateUserInfo(Action<BaseHead> callback = null)
+		{ return false; }
+		
+		/// <summary>
+		/// 请求获取指定用户的头像。异步，此方法将请求放入请求队列后返回。
+		/// </summary>
+		/// <param name="user">要获取头像的用户</param>
+		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
+		public static bool QueueGetUserPhoto(User user, Action<BaseHead> callback = null)
+		{ return false; }
 	}
 }
