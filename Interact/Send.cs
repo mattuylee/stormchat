@@ -6,9 +6,9 @@ using Newtonsoft.Json;
 using System.Net;
 using System.Net.Sockets;
 
+//StormClient发送数据相关内容
 namespace Interact
 {
-	//发送数据相关内容
 	public partial class StormClient
 	{
 		// 消息写入线程，向tcp连接写入数据
@@ -20,7 +20,7 @@ namespace Interact
 				foreach (Packet packet in sendQueue.GetConsumingEnumerable())
 				{
 					//结束循环
-					if (!tcpClient.Connected)
+					if (StormClient.Status != ClientStatus.Running)
 						break;
 					//向tcp连接写数据
 					byte[] lenBuffer; //数据长度缓存
@@ -43,13 +43,11 @@ namespace Interact
 			}
 			catch (System.IO.IOException ex)
 			{
-				tcpClient.Close();
-				OnDisconnect?.Invoke(ex);
+				HandleConnectionBroken(ex);
 			}
 			catch (ObjectDisposedException ex)
 			{
-				tcpClient.Close();
-				OnDisconnect?.Invoke(ex);
+                HandleConnectionBroken(ex);
 			}
 		}
 		//发送数据

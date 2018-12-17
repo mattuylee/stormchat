@@ -5,9 +5,9 @@ using System.Text;
 using System.Net;
 using System.Net.Sockets;
 
+//StormClient读取数据相关内容
 namespace Interact
 {
-	//读取数据相关内容
 	public partial class StormClient
 	{
 		// 数据读取线程，从tcp连接读取数据
@@ -16,7 +16,7 @@ namespace Interact
 			NetworkStream stream = StormClient.tcpClient.GetStream();
 			try
 			{
-				while (tcpClient.Connected)
+				while (StormClient.Status == ClientStatus.Running)
 				{
 					byte[] head = ReadDataWithLength(stream);
 					byte[] data = ReadDataWithLength(stream);
@@ -25,13 +25,11 @@ namespace Interact
 			}
 			catch (System.IO.IOException ex)
 			{
-				tcpClient.Close();
-				OnDisconnect(ex);
+                HandleConnectionBroken(ex);
 			}
 			catch (ObjectDisposedException ex)
 			{
-				tcpClient.Close();
-				OnDisconnect(ex);
+                HandleConnectionBroken(ex);
 			}
 		}
 		// 从网络流读取数据

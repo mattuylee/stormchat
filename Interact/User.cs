@@ -15,7 +15,8 @@ namespace Interact
 		public string Name;     //用户名
 		public string NickName; //昵称
 		public string Motto;	//个性签名
-		public UserGroup Group;	//用户组
+		public UserGroup Group; //用户组
+		public Image Photo;		//头像
 	}
 
 	//更新用户信息时新的用户信息。如果项值为null则不更改相应的信息

@@ -30,17 +30,15 @@ namespace Interact
 										  //服务器可能并没有处理完成请求
 	}
 	//允许请求的操作列表。具体定义见设计文档
-	public enum Operations
+	public static class Operations
 	{
-		Panic,
-		TransMessage,
-		SendMessage,
-		Ping,
-		Login,
-		Logout,
-		Offline,
-		GetUserList,
-		UpdateUserInfo,
-		GetUserPhoto
+		public const string Panic = "Panic";
+		public const string TransMessage = "TransMessage";
+		public const string SendMessage = "SendMessage";
+		public const string Login = "Login2";
+		public const string Logout = "Logout";
+		public const string Offline = "Offline";
+		public const string UpdateUserInfo = "UpdateUserInfo";
+		public const string GetUsers = "GetUsers";
 	}
 }

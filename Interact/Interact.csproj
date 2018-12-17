@@ -45,6 +45,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Exception.cs" />
+    <Compile Include="Fields.cs" />
     <Compile Include="Handle.cs" />
     <Compile Include="JsonObject.cs" />
     <Compile Include="Message.cs" />
