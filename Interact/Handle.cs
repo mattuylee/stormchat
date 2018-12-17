@@ -4,35 +4,50 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+
+//StormClient对数据的处理相关内容
+
 namespace Interact
 {
-	//对数据的处理相关内容
 	public partial class StormClient
 	{
+		//处理连接中断异常
+		private static void HandleConnectionBroken(Exception ex)
+		{
+            lock (statusLocker)
+            {
+				if (Status != ClientStatus.Running)
+					return;
+				statusLocker = ClientStatus.Stopped;
+				tcpClient.Close();
+				OnDisconnect?.Invoke(ex);
+			}
+		}
+
+		#region 处理服务器数据
 		//根据包头信息处理数据
 		private static void HandleAll(byte[] headData, byte[] data)
 		{
 			string head = Encoding.UTF8.GetString(headData);
 			JObject jsonObj = (JObject)JsonConvert.DeserializeObject(head);
-			switch ((Operations)Enum.Parse(typeof(Operations), jsonObj[AttrNames.Operation].ToString()))
+			switch (jsonObj[AttrNames.Operation].ToString())
 			{
 			case Operations.Login:
 				HandleLoginResult(GetResultHead(jsonObj), data);
 				break;
 			case Operations.Panic:
+				HandlePanic(GetResultHead(jsonObj));
+				break;
 			case Operations.TransMessage:
+
 			case Operations.SendMessage:
-			case Operations.Ping:
 			case Operations.Logout:
 			case Operations.Offline:
-			case Operations.GetUserList:
 			case Operations.UpdateUserInfo:
-			case Operations.GetUserPhoto:
 			default:
 				break;
 			}
 		}
-
 		//提取基本结果包头结构
 		private static ResultHead GetResultHead(JObject head)
 		{
@@ -43,6 +58,13 @@ namespace Interact
 				Error = head[AttrNames.Error].ToString()
 			};
 			return resultHead;
+		}
+
+		//处理服务器异常断开连接消息
+		private static void HandlePanic(ResultHead head)
+		{
+			ConnectionBrokenException ex = new ConnectionBrokenException(head.Error);
+			HandleConnectionBroken(ex);
 		}
 
 		//处理登录反馈消息
@@ -64,7 +86,7 @@ namespace Interact
 			};
 			OnLoginDone?.Invoke(head, user);
 		}
-
+		#endregion
 
 	}
 
