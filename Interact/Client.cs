@@ -7,6 +7,7 @@ using System.Net;
 using System.Threading;
 using System.Collections.Concurrent;
 using System.Drawing;
+using System.IO;
 
 namespace Interact
 {
@@ -46,7 +47,7 @@ namespace Interact
 		//获取用户列表结果处理事件
 		public static event GetUserListDoneHandler OnGetUserListDone;
 		//获取用户头像结果处理事件
-		public static event GetUserPhotoDoneHandler OnGetUserPhotoDoneHandler;
+		public static event GetUserPhotoDoneHandler OnGetUserPhotoDone;
 		//发送消息时是否要求服务器返回处理结果
 		public static bool DoesSendMessageReturn
 		{
@@ -78,7 +79,8 @@ namespace Interact
 		}
 
 		/// <summary>
-		/// 初始化客户端，连接服务器。如果成功则启动数据接收和发送线程
+		/// 初始化客户端，连接服务器。如果成功则启动数据接收和发送线程。
+		/// 注意，当网络不稳定时此方法可能会阻塞。
 		/// </summary>
 		/// <returns>如果已连接到服务器返回true，否则返回false。</returns>
 		public static bool Initialize()
@@ -135,31 +137,100 @@ namespace Interact
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		public static bool QueueSendMessage(string text, User to, Action<BaseHead> callback = null)
-		{ return false; }
+		{
+			JsonSendMessageHead jsonObj = new JsonSendMessageHead()
+			{
+				Token = "",
+				Operation = Operations.SendMessage.ToString(),
+				To = to.Name,
+				NeedResult = DoesSendMessageReturn ? "1" : "0"
+			};
+			Packet packet = new Packet
+			{
+				Head = jsonObj,
+				Data = Encoding.UTF8.GetBytes(text),
+				CallBack = callback
+			};
+			return Send(packet);
+		}
+		
 		/// <summary>
 		/// 请求登出。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-
 		public static bool QueueLogout(Action<BaseHead> callback = null)
-		{ return false; }
+		{
+			BaseHead jsonObj = new BaseHead()
+			{
+				Token = "",
+				Operation = Operations.Logout.ToString(),
+			};
+			Packet packet = new Packet
+			{
+				Head = jsonObj,
+				Data = null,
+				CallBack = callback
+			};
+			return Send(packet);
+		}
+		
 		/// <summary>
 		/// 请求用户列表。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-
 		public static bool QueueGetUserList(Action<BaseHead> callback = null)
-		{ return false; }
+		{
+			BaseHead jsonObj = new BaseHead()
+			{
+				Token = "",
+				Operation = Operations.GetUserList.ToString(),
+			};
+			Packet packet = new Packet
+			{
+				Head = jsonObj,
+				Data = null,
+				CallBack = callback
+			};
+			return Send(packet);
+		}
+		
 		/// <summary>
 		/// 请求更新当前登录用户信息。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-
-		public static bool QueueUpdateUserInfo(Action<BaseHead> callback = null)
-		{ return false; }
+		public static bool QueueUpdateUserInfo(UserInfo userInfo, Action<BaseHead> callback = null)
+		{
+			byte[] photoData = null;	//头像数据
+			//将头像数据转换到字符数组
+			if (userInfo.Photo != null)
+			{
+				MemoryStream memStream = new MemoryStream();
+				userInfo.Photo.Save(memStream, userInfo.Photo.RawFormat);
+				photoData = new byte[memStream.Length];
+				memStream.Seek(0, SeekOrigin.Begin);
+				memStream.Read(photoData, 0, photoData.Length);
+			}
+			//构建数据包
+			JsonUserInfoHead jsonObj = new JsonUserInfoHead()
+			{
+				Token = "",
+				Operation = Operations.UpdateUserInfo.ToString(),
+				NickName = userInfo.NickName,
+				Password = userInfo.Password,
+				Motto = userInfo.Motto,
+				Photo = userInfo.Photo == null ? 0 : photoData.Length
+			};
+			Packet packet = new Packet
+			{
+				Head = jsonObj,
+				Data = photoData,
+				CallBack = callback
+			};
+			return Send(packet);
+		}
 		
 		/// <summary>
 		/// 请求获取指定用户的头像。异步，此方法将请求放入请求队列后返回。
@@ -168,6 +239,20 @@ namespace Interact
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		public static bool QueueGetUserPhoto(User user, Action<BaseHead> callback = null)
-		{ return false; }
+		{
+			JsonGetUserPhotoHead jsonObj = new JsonGetUserPhotoHead()
+			{
+				Token = "",
+				Operation = Operations.GetUserPhoto.ToString(),
+				User = user.Name
+			};
+			Packet packet = new Packet
+			{
+				Head = jsonObj,
+				Data = null,
+				CallBack = callback
+			};
+			return Send(packet);
+		}
 	}
 }

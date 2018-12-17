@@ -10,6 +10,7 @@ namespace Interact
 	public class BaseHead
 	{
 		//请求ID，由发送方定义的随机字符串。如果接受方有返回数据应包含相同的Token
+		//此特性暂时未启用，传空字符串即可
 		public string Token;
 		//操作类型，决定数据的其他内容
 		public string Operation;
@@ -30,13 +31,26 @@ namespace Interact
 		public string Pwd;
 	}
 
-	//用户信息
-	internal class JsonUserInfo
+	//发送消息包头
+	internal class JsonSendMessageHead : BaseHead
 	{
-		public string User;     //用户名
-		public string NickName; //昵称
-		public string Motto;    //个性签名
-		public string UGroup;	//用户组
+		public string To; //消息接收者用户名
+		public string NeedResult = "0"; //是否要求服务器返回处理结果。否传“0”
+	}
+
+	//更新用户信息包头
+	internal class JsonUserInfoHead : BaseHead
+	{
+		public string NickName = null;
+		public string Password = null;
+		public string Motto = null;
+		public int Photo = 0;  //新头像大小
+	}
+
+	//获取用户头像请求的包头
+	internal class JsonGetUserPhotoHead : BaseHead
+	{
+		public string User;	//要获取头像的用户名
 	}
 	#endregion
 }

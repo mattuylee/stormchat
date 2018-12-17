@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StormChatWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="421.4" Width="628.2">
+        Title="UserWindow" Height="450" Width="800"
+		
+		>
 	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="190*"/>
-			<ColumnDefinition Width="121*"/>
-		</Grid.ColumnDefinitions>
-		<Image x:Name="LogImage" HorizontalAlignment="Left" Height="220" Margin="0,20,-0.4,0" VerticalAlignment="Top" Width="622" Source="/RESOURCES/logFormBackground.jpg" Stretch="None" Grid.ColumnSpan="2" RenderTransformOrigin="0.483,0.5"/>
-		<Button x:Name="Login_button" Content="LogIn" HorizontalAlignment="Left" Margin="240,330,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.664,1.51" Click="Login_button_Click" Height="40"/>
-		<TextBox x:Name="AccountBox" HorizontalAlignment="Left" Margin="240,255,0,0" TextWrapping="Wrap" Text="201701110203" VerticalAlignment="Top" Width="120" FontSize="14" RenderTransformOrigin="0.542,-1.021" />
-		<PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="240,296,0,0" VerticalAlignment="Top" Width="120" Password="1233211234567" FontSize="14"/>
-
+		<ListView x:Name="UsersList" HorizontalAlignment="Left" Height="346" VerticalAlignment="Top" Width="191" Margin="10,64,0,0" IsEnabled="False">
+			<ListView.View>
+				<GridView>
+					<GridViewColumn/>
+				</GridView>
+			</ListView.View>
+		</ListView>
 
 	</Grid>
 </Window>

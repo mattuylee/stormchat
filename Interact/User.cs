@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace Interact
 {
@@ -15,6 +16,15 @@ namespace Interact
 		public string NickName; //昵称
 		public string Motto;	//个性签名
 		public UserGroup Group;	//用户组
+	}
+
+	//更新用户信息时新的用户信息。如果项值为null则不更改相应的信息
+	public class UserInfo
+	{
+		public string Password = null;	//新密码
+		public string NickName = null;	//新昵称
+		public string Motto = null;		//新签名
+		public Image Photo = null;		//新头像
 	}
 
 	//用户类型
