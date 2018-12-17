@@ -97,22 +97,20 @@ func (session *Session) ReceiveLoop() {
 		switch headInfo[keyname_operation] {
 		case operation_send_message:
 			go session.MessageHandler(headInfo, data)
-			break
 		case operation_ping:
 			go session.PingHandler()
-			break
+		case operation_login_old1: //Deprecated
+			session.Old1_LoginHandler(headInfo)
 		case operation_login:
 			session.LoginHandler(headInfo)
-			break
 		case operation_logout:
 			session.LogoutHandler()
-			break
 		case operation_get_user_list:
 			go session.GetUserListHandler(headInfo)
-			break
 		case operation_update_userinfo:
 			go session.UpdateUserInfoHandler(headInfo, data)
-			break
+		case operation_get_users:
+			go session.GetUsersHandler(headInfo)
 		default:
 			session.SendPanic(headInfo[keyname_operation], "Unknwon Request")
 			continue
@@ -172,8 +170,18 @@ func (session *Session) LoginHandler(headInfo map[string]string) {
 	session.status = session_status_running
 	session.Offline(server.sessionMap[session.sender.User], "The account is logged by another client.")
 	server.sessionMap[session.sender.User] = session
-	userdata, _ := json.Marshal(user)
-	session.SendData(returnInfo, userdata)
+	returnInfo["User"] = user.User
+	returnInfo["NickName"] = user.NickName
+	returnInfo["Motto"] = user.Motto
+	returnInfo["UGroup"] = user.UGroup
+	var photo []byte
+	if username, ok := headInfo["User"]; ok {
+		photo = GetUserPhoto(username)
+	} else {
+		photo = GetUserPhoto(session.sender.User)
+	}
+	returnInfo["Photo"] = string(len(photo))
+	session.SendData(returnInfo, photo)
 	//转发用户未读消息
 	go session.TransUnreadedMessages(session.sender)
 	Debug("Log in successfully.")
@@ -227,47 +235,6 @@ func (session *Session) MessageHandler(headInfo map[string]string, msg []byte) {
 	} //返回执行结果
 }
 
-//获取用户列表
-func (session *Session) GetUserListHandler(headInfo map[string]string) bool {
-	head := make(map[string]string)
-	head[keyname_token] = headInfo[keyname_token]
-	head[keyname_operation] = headInfo[keyname_operation]
-	head["Count"] = "0"
-	head["Error"] = ""
-	users := GetUserList()
-	if users == nil {
-		head["Error"] = "Server failed to get user list."
-		session.SendData(head, nil)
-		return false
-	}
-	data, err := json.Marshal(users)
-	if err != nil {
-		head["Error"] = "JSON marshal failed: " + err.Error()
-		WriteLog(head["Error"])
-		session.SendData(head, nil)
-		return false
-	}
-	head["Count"] = string(len(users))
-	return session.SendData(head, data)
-}
-
-//获取用户头像
-func (session *Session) GetUserPhotoHandler(headInfo map[string]string) {
-	head := make(map[string]string)
-	head[keyname_token] = headInfo[keyname_token]
-	head[keyname_operation] = headInfo[keyname_operation]
-	head["Length"] = "0"
-	head["Error"] = ""
-	var photo []byte
-	if username, ok := headInfo["User"]; ok {
-		photo = GetUserPhoto(username)
-	} else {
-		photo = GetUserPhoto(session.sender.User)
-	}
-	head["Length"] = string(len(photo))
-	session.SendData(head, photo)
-}
-
 //更改用户信息
 func (session *Session) UpdateUserInfoHandler(headInfo map[string]string, data []byte) {
 	//准备反馈数据
@@ -291,6 +258,51 @@ func (session *Session) UpdateUserInfoHandler(headInfo map[string]string, data [
 		result["Error"] += session.sender.UpdatePhoto(data)
 	} //修改头像
 	session.SendData(result, nil)
+}
+
+//获取（指定/所有）用户信息
+func (session *Session) GetUsersHandler(headInfo map[string]string) {
+	result := make(map[string]string)
+	result[keyname_token] = headInfo[keyname_token]
+	result[keyname_operation] = headInfo[operation_update_userinfo]
+	result["Error"] = ""
+	users := make([]UserInfo, 1) //用户列表
+	//获取特定用户信息
+	if username, ok := headInfo["User"]; ok {
+		user := QueryUserInfo(username)
+		if user != nil {
+			result["Error"] = "User '" + headInfo["User"] + "' don't exists."
+			session.SendData(result, nil)
+			return
+		} else {
+			users = append(users, *user)
+		}
+		//获取所有用户信息
+	} else {
+		users = GetUserList()
+	}
+	//发送用户数据
+	var photoData []byte //头像数据
+	result["Error"] = ""
+	result["Total"] = string(len(users)) //总用户数
+	for i, curUser := range users {
+		photoData = GetUserPhoto(curUser.User)
+		result["Count"] = string(i + 1) //当前用户次序编号
+		result["User"] = curUser.User
+		result["NickName"] = curUser.NickName
+		result["Motto"] = curUser.Motto
+		result["UGroup"] = curUser.UGroup
+		result["Photo"] = string(len(photoData)) //头像数据长度
+		session.SendData(result, photoData)
+	}
+	//发送用户列表结束封包
+	endingResult := make(map[string]string)
+	endingResult[keyname_token] = result[keyname_token]
+	endingResult[keyname_operation] = result[keyname_operation]
+	endingResult["Total"] = result["Total"]
+	endingResult["Count"] = string(-1)
+	endingResult["Error"] = ""
+	session.SendData(endingResult, nil)
 }
 
 /**

@@ -241,7 +241,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFF+qBWK6M3Z8Y="
 					},
-					"name": "storm-chat",
+					"name": "session",
 					"ownedViews": [
 						{
 							"_type": "UMLClassView",
@@ -547,6 +547,23 @@
 										},
 										{
 											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnvB8JN99v6ag=",
+											"_parent": {
+												"$ref": "AAAAAAFnEWVvaoWKnDU="
+											},
+											"model": {
+												"$ref": "AAAAAAFnvB8I/99sBJY="
+											},
+											"font": "Arial;13;0",
+											"left": 245,
+											"top": 323,
+											"width": 391,
+											"height": 13,
+											"text": "+Login2Handler(headInfo: HeadInfo)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
 											"_id": "AAAAAAFnEXKo6ohGQYg=",
 											"_parent": {
 												"$ref": "AAAAAAFnEWVvaoWKnDU="
@@ -556,7 +573,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 323,
+											"top": 338,
 											"width": 391,
 											"height": 13,
 											"text": "+LogoutHandler(HeadInfo)",
@@ -573,7 +590,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 338,
+											"top": 353,
 											"width": 391,
 											"height": 13,
 											"text": "+MessageHandler(HeadInfo)",
@@ -590,7 +607,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 353,
+											"top": 368,
 											"width": 391,
 											"height": 13,
 											"text": "+GetUserListHandler()",
@@ -607,7 +624,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 368,
+											"top": 383,
 											"width": 391,
 											"height": 13,
 											"text": "+GetUserPhotoHandler()",
@@ -624,10 +641,27 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 383,
+											"top": 398,
 											"width": 391,
 											"height": 13,
 											"text": "+UpdateUserInfoHandler(head, data)",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLOperationView",
+											"_id": "AAAAAAFnvB+A/+B99ho=",
+											"_parent": {
+												"$ref": "AAAAAAFnEWVvaoWKnDU="
+											},
+											"model": {
+												"$ref": "AAAAAAFnvB+AzuB6Egg="
+											},
+											"font": "Arial;13;0",
+											"left": 245,
+											"top": 413,
+											"width": 391,
+											"height": 13,
+											"text": "+GetUsersHandler()",
 											"horizontalAlignment": 0
 										},
 										{
@@ -641,7 +675,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 398,
+											"top": 428,
 											"width": 391,
 											"height": 13,
 											"text": "+TransMessage(msg: Message)",
@@ -658,7 +692,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 413,
+											"top": 443,
 											"width": 391,
 											"height": 13,
 											"text": "+TransUnreadedMessages(user: UserInfo)",
@@ -675,7 +709,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 428,
+											"top": 458,
 											"width": 391,
 											"height": 13,
 											"text": "+Offline(oldChat: StormChat)",
@@ -692,7 +726,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 443,
+											"top": 473,
 											"width": 391,
 											"height": 13,
 											"text": "+SendData(HeadInfo, data []byte)",
@@ -709,7 +743,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 458,
+											"top": 488,
 											"width": 391,
 											"height": 13,
 											"text": "+SendPanic(curOperation: string, err: string)",
@@ -726,7 +760,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 473,
+											"top": 503,
 											"width": 391,
 											"height": 13,
 											"text": "-send([]byte, []byte)",
@@ -743,7 +777,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 488,
+											"top": 518,
 											"width": 391,
 											"height": 13,
 											"text": "-waitData()",
@@ -760,7 +794,7 @@
 											},
 											"font": "Arial;13;0",
 											"left": 245,
-											"top": 503,
+											"top": 533,
 											"width": 391,
 											"height": 13,
 											"text": "-readDataWithLength(maxLength: int16)",
@@ -771,7 +805,7 @@
 									"left": 240,
 									"top": 258,
 									"width": 401,
-									"height": 263
+									"height": 293
 								},
 								{
 									"_type": "UMLReceptionCompartmentView",
@@ -1244,7 +1278,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 448,
+							"top": 472,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "LogoutHandler()，登出请求处理函数"
@@ -1257,7 +1291,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 472,
+							"top": 496,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "MessageHandler()，消息到达处理函数"
@@ -1270,7 +1304,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 568,
+							"top": 616,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "TransMessage()，转发消息到目标客户"
@@ -1755,7 +1789,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 616,
+							"top": 664,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "Offline()，勒令用户下线"
@@ -1768,7 +1802,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 640,
+							"top": 688,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "SendData()，发送数据到客户端"
@@ -1781,7 +1815,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 664,
+							"top": 712,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "SendPanic()，发送Panic消息到客户端，断开连接"
@@ -1794,7 +1828,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 720,
+							"top": 768,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "waitData()，等待客户端数据，并监控Status变化"
@@ -1807,7 +1841,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 696,
+							"top": 744,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "send()，将要发送给客户端的数据发送到写循环线程"
@@ -1820,7 +1854,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 744,
+							"top": 792,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "readDataWinthLength()，从TCP连接中读出数据"
@@ -2102,7 +2136,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 592,
+							"top": 640,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "TransUnreadedMessages()，用户登录时转发未读消息"
@@ -2115,7 +2149,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 544,
+							"top": 568,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "UpdateUserInfoHandler()，更新用户信息"
@@ -2128,7 +2162,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 496,
+							"top": 520,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "GetUserListHandler()，请求好友列表处理函数"
@@ -2141,7 +2175,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 704,
-							"top": 520,
+							"top": 544,
 							"width": 333.751953125,
 							"height": 25,
 							"text": "GetUserPhotoHandler()，请求用户头像处理函数"
@@ -2171,6 +2205,32 @@
 							"width": 333.751953125,
 							"height": 25,
 							"text": "StopChan，写消息循环终止通道，由读循环控制"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvB0JrN2oGL0=",
+							"_parent": {
+								"$ref": "AAAAAAFm+G804d1aFHo="
+							},
+							"font": "Arial;13;0",
+							"left": 704,
+							"top": 592,
+							"width": 333.751953125,
+							"height": 25,
+							"text": "GetUsersHandler()，获取（特定/所有）用户信息"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvB6LNt6HInk=",
+							"_parent": {
+								"$ref": "AAAAAAFm+G804d1aFHo="
+							},
+							"font": "Arial;13;0",
+							"left": 704,
+							"top": 448,
+							"width": 333.751953125,
+							"height": 25,
+							"text": "Login2Handler()，登录请求处理函数（新版）"
 						}
 					]
 				},
@@ -2458,6 +2518,27 @@
 						},
 						{
 							"_type": "UMLOperation",
+							"_id": "AAAAAAFnvB8I/99sBJY=",
+							"_parent": {
+								"$ref": "AAAAAAFnEWVvaYWB2bQ="
+							},
+							"name": "Login2Handler",
+							"parameters": [
+								{
+									"_type": "UMLParameter",
+									"_id": "AAAAAAFnvB9WDN+RXos=",
+									"_parent": {
+										"$ref": "AAAAAAFnvB8I/99sBJY="
+									},
+									"name": "headInfo",
+									"type": {
+										"$ref": "AAAAAAFnF6x5vANUQRA="
+									}
+								}
+							]
+						},
+						{
+							"_type": "UMLOperation",
 							"_id": "AAAAAAFnEXKo04hDb4A=",
 							"_parent": {
 								"$ref": "AAAAAAFnEWVvaYWB2bQ="
@@ -2537,6 +2618,14 @@
 									"type": ""
 								}
 							]
+						},
+						{
+							"_type": "UMLOperation",
+							"_id": "AAAAAAFnvB+AzuB6Egg=",
+							"_parent": {
+								"$ref": "AAAAAAFnEWVvaYWB2bQ="
+							},
+							"name": "GetUsersHandler"
 						},
 						{
 							"_type": "UMLOperation",
@@ -5929,19 +6018,19 @@
 										},
 										{
 											"_type": "UMLEnumerationLiteralView",
-											"_id": "AAAAAAFnDNSmwM7I+lg=",
+											"_id": "AAAAAAFnvAowT9Z4jvo=",
 											"_parent": {
 												"$ref": "AAAAAAFnCGJSWraf2OI="
 											},
 											"model": {
-												"$ref": "AAAAAAFnDNSmdc7FPgA="
+												"$ref": "AAAAAAFnvAowIdZ1zwM="
 											},
 											"font": "Arial;13;0",
 											"left": 293,
 											"top": 624,
 											"width": 303,
 											"height": 13,
-											"text": "Ping",
+											"text": "Login2",
 											"horizontalAlignment": 0
 										},
 										{
@@ -6031,19 +6120,36 @@
 										},
 										{
 											"_type": "UMLEnumerationLiteralView",
-											"_id": "AAAAAAFnsPB3VY7hc9k=",
+											"_id": "AAAAAAFnvBqhN9o5JZM=",
 											"_parent": {
 												"$ref": "AAAAAAFnCGJSWraf2OI="
 											},
 											"model": {
-												"$ref": "AAAAAAFnsPB3Go7eRpA="
+												"$ref": "AAAAAAFnvBqg/9o2cxE="
 											},
 											"font": "Arial;13;0",
 											"left": 293,
 											"top": 714,
 											"width": 303,
 											"height": 13,
-											"text": "GetUserPhoto",
+											"text": "GetUsers",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLEnumerationLiteralView",
+											"_id": "AAAAAAFnDNSmwM7I+lg=",
+											"_parent": {
+												"$ref": "AAAAAAFnCGJSWraf2OI="
+											},
+											"model": {
+												"$ref": "AAAAAAFnDNSmdc7FPgA="
+											},
+											"font": "Arial;13;0",
+											"left": 293,
+											"top": 729,
+											"width": 303,
+											"height": 13,
+											"text": "Ping",
 											"horizontalAlignment": 0
 										}
 									],
@@ -6051,7 +6157,7 @@
 									"left": 288,
 									"top": 574,
 									"width": 313,
-									"height": 158
+									"height": 173
 								}
 							],
 							"font": "Arial;13;0",
@@ -6059,7 +6165,7 @@
 							"left": 288,
 							"top": 536,
 							"width": 313,
-							"height": 337,
+							"height": 345,
 							"nameCompartment": {
 								"$ref": "AAAAAAFnCGJSWraWeX0="
 							},
@@ -6402,7 +6508,7 @@
 							"top": 688,
 							"width": 377,
 							"height": 25,
-							"text": "Login，客户端登陆操作"
+							"text": "Login，客户端登录，服务器返回用户基本数据"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -7279,7 +7385,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 632,
-							"top": 664,
+							"top": 832,
 							"width": 377,
 							"height": 25,
 							"text": "Ping，客户端发送心跳包"
@@ -7416,7 +7522,20 @@
 						},
 						{
 							"_type": "UMLNoteView",
-							"_id": "AAAAAAFnsPFxgZEiwes=",
+							"_id": "AAAAAAFnvAezD9XQN6w=",
+							"_parent": {
+								"$ref": "AAAAAAFm+MaskuOd1fg="
+							},
+							"font": "Arial;13;0",
+							"left": 632,
+							"top": 664,
+							"width": 377,
+							"height": 25,
+							"text": "Login2，客户端登录，服务器返回用户信息数据"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBtCtts2F1w=",
 							"_parent": {
 								"$ref": "AAAAAAFm+MaskuOd1fg="
 							},
@@ -7425,7 +7544,7 @@
 							"top": 808,
 							"width": 377,
 							"height": 25,
-							"text": "GetUserPhoto，获取用户头像"
+							"text": "GetUsers，获取（特定/所有）用户数据"
 						}
 					]
 				},
@@ -7726,11 +7845,11 @@
 						},
 						{
 							"_type": "UMLEnumerationLiteral",
-							"_id": "AAAAAAFnDNSmdc7FPgA=",
+							"_id": "AAAAAAFnvAowIdZ1zwM=",
 							"_parent": {
 								"$ref": "AAAAAAFnCGJSWbaTRcY="
 							},
-							"name": "Ping"
+							"name": "Login2"
 						},
 						{
 							"_type": "UMLEnumerationLiteral",
@@ -7774,11 +7893,19 @@
 						},
 						{
 							"_type": "UMLEnumerationLiteral",
-							"_id": "AAAAAAFnsPB3Go7eRpA=",
+							"_id": "AAAAAAFnvBqg/9o2cxE=",
 							"_parent": {
 								"$ref": "AAAAAAFnCGJSWbaTRcY="
 							},
-							"name": "GetUserPhoto"
+							"name": "GetUsers"
+						},
+						{
+							"_type": "UMLEnumerationLiteral",
+							"_id": "AAAAAAFnDNSmdc7FPgA=",
+							"_parent": {
+								"$ref": "AAAAAAFnCGJSWbaTRcY="
+							},
+							"name": "Ping"
 						}
 					]
 				},
@@ -8207,7 +8334,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 1271,
+							"top": 1343,
 							"width": 401,
 							"height": 97
 						},
@@ -8219,9 +8346,9 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 1375,
+							"top": 1447,
 							"width": 401,
-							"height": 97
+							"height": 106
 						},
 						{
 							"_type": "RectangleView",
@@ -8231,7 +8358,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 1271,
+							"top": 1343,
 							"width": 345,
 							"height": 97
 						},
@@ -8243,9 +8370,9 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 1375,
+							"top": 1447,
 							"width": 345,
-							"height": 97
+							"height": 106
 						},
 						{
 							"_type": "RectangleView",
@@ -8255,7 +8382,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 24,
-							"top": 1271,
+							"top": 1343,
 							"width": 209,
 							"height": 41
 						},
@@ -8267,7 +8394,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 24,
-							"top": 1279,
+							"top": 1351,
 							"width": 209,
 							"height": 25,
 							"text": "【CLIENT】Login"
@@ -8280,7 +8407,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 1272,
+							"top": 1344,
 							"width": 393,
 							"height": 25,
 							"text": "User，用户名；"
@@ -8293,7 +8420,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 1296,
+							"top": 1368,
 							"width": 393,
 							"height": 25,
 							"text": "Pwd，密码；"
@@ -8306,7 +8433,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 1376,
+							"top": 1448,
 							"width": 393,
 							"height": 25,
 							"text": "Error，错误文本，登陆成功为空；"
@@ -8319,7 +8446,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 2023,
+							"top": 2095,
 							"width": 401,
 							"height": 97
 						},
@@ -8331,7 +8458,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 2128,
+							"top": 2200,
 							"width": 401,
 							"height": 169
 						},
@@ -8343,7 +8470,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 2023,
+							"top": 2095,
 							"width": 345,
 							"height": 97
 						},
@@ -8355,7 +8482,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 2127,
+							"top": 2199,
 							"width": 345,
 							"height": 170
 						},
@@ -8367,7 +8494,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 24,
-							"top": 2023,
+							"top": 2095,
 							"width": 209,
 							"height": 41
 						},
@@ -8379,7 +8506,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 24,
-							"top": 2031,
+							"top": 2103,
 							"width": 209,
 							"height": 25,
 							"text": "【CLIENT】GetUserList"
@@ -8392,7 +8519,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 2152,
+							"top": 2224,
 							"width": 393,
 							"height": 25,
 							"text": "Error，错误文本，成功为空；"
@@ -8405,7 +8532,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 2128,
+							"top": 2200,
 							"width": 393,
 							"height": 25,
 							"text": "Count，获取到的用户个数；"
@@ -8418,7 +8545,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 2152,
+							"top": 2224,
 							"width": 337,
 							"height": 25,
 							"text": "User，用户名"
@@ -8431,7 +8558,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 2176,
+							"top": 2248,
 							"width": 337,
 							"height": 25,
 							"text": "NickName，昵称"
@@ -8444,7 +8571,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 2128,
+							"top": 2200,
 							"width": 337,
 							"height": 25,
 							"text": "0...*"
@@ -8457,7 +8584,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 2200,
+							"top": 2272,
 							"width": 337,
 							"height": 25,
 							"text": "Motto，签名"
@@ -8470,7 +8597,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 640,
-							"top": 2224,
+							"top": 2296,
 							"width": 337,
 							"height": 25,
 							"text": "UGroup，用户组"
@@ -8594,8 +8721,8 @@
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 244,
-							"top": 1023,
+							"left": 1268,
+							"top": 943,
 							"width": 401,
 							"height": 97
 						},
@@ -8606,8 +8733,8 @@
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 244,
-							"top": 1127,
+							"left": 1268,
+							"top": 1047,
 							"width": 401,
 							"height": 97
 						},
@@ -8618,8 +8745,8 @@
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 644,
-							"top": 1023,
+							"left": 1668,
+							"top": 943,
 							"width": 345,
 							"height": 97
 						},
@@ -8630,8 +8757,8 @@
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 644,
-							"top": 1127,
+							"left": 1668,
+							"top": 1047,
 							"width": 345,
 							"height": 97
 						},
@@ -8642,8 +8769,8 @@
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 28,
-							"top": 1023,
+							"left": 1052,
+							"top": 943,
 							"width": 209,
 							"height": 41
 						},
@@ -8654,8 +8781,8 @@
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 28,
-							"top": 1031,
+							"left": 1052,
+							"top": 951,
 							"width": 209,
 							"height": 25,
 							"text": "【CLIENT】Ping"
@@ -8668,7 +8795,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 241,
-							"top": 1777,
+							"top": 1849,
 							"width": 401,
 							"height": 97
 						},
@@ -8680,7 +8807,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 241,
-							"top": 1881,
+							"top": 1953,
 							"width": 401,
 							"height": 97
 						},
@@ -8692,7 +8819,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 641,
-							"top": 1777,
+							"top": 1849,
 							"width": 345,
 							"height": 97
 						},
@@ -8704,7 +8831,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 641,
-							"top": 1881,
+							"top": 1953,
 							"width": 345,
 							"height": 97
 						},
@@ -8716,7 +8843,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 25,
-							"top": 1777,
+							"top": 1849,
 							"width": 209,
 							"height": 41
 						},
@@ -8728,7 +8855,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 241,
-							"top": 1526,
+							"top": 1598,
 							"width": 401,
 							"height": 97
 						},
@@ -8740,7 +8867,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 241,
-							"top": 1630,
+							"top": 1702,
 							"width": 401,
 							"height": 97
 						},
@@ -8752,7 +8879,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 641,
-							"top": 1526,
+							"top": 1598,
 							"width": 345,
 							"height": 97
 						},
@@ -8764,7 +8891,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 641,
-							"top": 1630,
+							"top": 1702,
 							"width": 345,
 							"height": 97
 						},
@@ -8776,7 +8903,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 25,
-							"top": 1526,
+							"top": 1598,
 							"width": 209,
 							"height": 41
 						},
@@ -8788,7 +8915,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 25,
-							"top": 1784,
+							"top": 1856,
 							"width": 209,
 							"height": 25,
 							"text": "【SERVER】Offline"
@@ -8801,7 +8928,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 241,
-							"top": 1776,
+							"top": 1848,
 							"width": 393,
 							"height": 25,
 							"text": "Error，勒令下线原因"
@@ -8814,7 +8941,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 24,
-							"top": 1536,
+							"top": 1608,
 							"width": 209,
 							"height": 25,
 							"text": "【Client】Logout"
@@ -8827,7 +8954,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 240,
-							"top": 1800,
+							"top": 1872,
 							"width": 393,
 							"height": 25,
 							"text": "Addr，新客户端的地址（如果有）"
@@ -8847,37 +8974,13 @@
 						},
 						{
 							"_type": "RectangleView",
-							"_id": "AAAAAAFnHP4vYMALDPY=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 244,
-							"top": 2426,
-							"width": 401,
-							"height": 97
-						},
-						{
-							"_type": "RectangleView",
-							"_id": "AAAAAAFnHP4vYMANw0M=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 644,
-							"top": 2426,
-							"width": 345,
-							"height": 97
-						},
-						{
-							"_type": "RectangleView",
 							"_id": "AAAAAAFnHQLERFeSNiU=",
 							"_parent": {
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
 							"left": 1268,
-							"top": 112,
+							"top": 111,
 							"width": 401,
 							"height": 105
 						},
@@ -8901,7 +9004,7 @@
 							},
 							"font": "Arial;13;0",
 							"left": 1668,
-							"top": 112,
+							"top": 111,
 							"width": 345,
 							"height": 105
 						},
@@ -9015,122 +9118,10 @@
 							},
 							"font": "Arial;13;0",
 							"left": 1668,
-							"top": 112,
+							"top": 111,
 							"width": 333,
 							"height": 25,
 							"text": "头像数据"
-						},
-						{
-							"_type": "RectangleView",
-							"_id": "AAAAAAFnNKFIU9KcmRM=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1268,
-							"top": 376,
-							"width": 401,
-							"height": 97
-						},
-						{
-							"_type": "RectangleView",
-							"_id": "AAAAAAFnNKFIU9KdW7c=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1268,
-							"top": 481,
-							"width": 401,
-							"height": 169
-						},
-						{
-							"_type": "RectangleView",
-							"_id": "AAAAAAFnNKFIU9KeqfU=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1668,
-							"top": 376,
-							"width": 345,
-							"height": 97
-						},
-						{
-							"_type": "RectangleView",
-							"_id": "AAAAAAFnNKFIU9Kfz4s=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1668,
-							"top": 480,
-							"width": 345,
-							"height": 170
-						},
-						{
-							"_type": "RectangleView",
-							"_id": "AAAAAAFnNKFIU9Kg3D8=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1052,
-							"top": 376,
-							"width": 209,
-							"height": 41
-						},
-						{
-							"_type": "UMLTextView",
-							"_id": "AAAAAAFnNKFIU9KhQHQ=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1052,
-							"top": 384,
-							"width": 209,
-							"height": 25,
-							"text": "【CLIENT】GetUserPhoto"
-						},
-						{
-							"_type": "UMLNoteView",
-							"_id": "AAAAAAFnNKFIU9KiVSw=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1268,
-							"top": 505,
-							"width": 393,
-							"height": 25,
-							"text": "Error，保留，总是为空；"
-						},
-						{
-							"_type": "UMLNoteView",
-							"_id": "AAAAAAFnNKFIU9KmUEo=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 1668,
-							"top": 481,
-							"width": 337,
-							"height": 25,
-							"text": "头像数据"
-						},
-						{
-							"_type": "UMLNoteView",
-							"_id": "AAAAAAFnNanHBurI4Nc=",
-							"_parent": {
-								"$ref": "AAAAAAFnCJD5xebaqTo="
-							},
-							"font": "Arial;13;0",
-							"left": 640,
-							"top": 1376,
-							"width": 329,
-							"height": 25,
-							"text": "用户信息（json）"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -9147,29 +9138,487 @@
 						},
 						{
 							"_type": "UMLNoteView",
-							"_id": "AAAAAAFnui/PRD4Nkb0=",
+							"_id": "AAAAAAFnu/aCZNMr80g=",
 							"_parent": {
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 1268,
-							"top": 376,
-							"width": 393,
+							"left": 24,
+							"top": 2136,
+							"width": 121.50537109375,
 							"height": 25,
-							"text": "User，要获取头像的用户名"
+							"text": "Deprecated"
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnu/sWMNNLHc4=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1052,
+							"top": 415,
+							"width": 209,
+							"height": 41
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFnu/sWMNNM+W4=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1052,
+							"top": 422,
+							"width": 209,
+							"height": 25,
+							"text": "【Client】GetUsers"
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnu/uZltNaOC4=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 415,
+							"width": 401,
+							"height": 105
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnu/uZltNbF/E=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 535,
+							"width": 401,
+							"height": 290
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnu/uZltNcDw8=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1670,
+							"top": 415,
+							"width": 345,
+							"height": 105
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnu/uZltNd53k=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1670,
+							"top": 535,
+							"width": 345,
+							"height": 202
 						},
 						{
 							"_type": "UMLNoteView",
-							"_id": "AAAAAAFnujFC6j4ew94=",
+							"_id": "AAAAAAFnu/wvPdNopbU=",
 							"_parent": {
 								"$ref": "AAAAAAFnCJD5xebaqTo="
 							},
 							"font": "Arial;13;0",
-							"left": 1268,
-							"top": 480,
+							"left": 1270,
+							"top": 535,
 							"width": 393,
 							"height": 25,
-							"text": "Length，头像数据长度，为0则头像数据无效；"
+							"text": "Error，错误文本，如果非空其他数据将不存在"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnu/2rlNN2c7Y=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 640,
+							"top": 1451,
+							"width": 337,
+							"height": 25,
+							"text": "User，用户名"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnu/2rlNN3BTY=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 640,
+							"top": 1475,
+							"width": 337,
+							"height": 25,
+							"text": "NickName，昵称"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnu/2rlNN4K+o=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 640,
+							"top": 1499,
+							"width": 337,
+							"height": 25,
+							"text": "Motto，签名"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnu/2rlNN5vRQ=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 640,
+							"top": 1523,
+							"width": 337,
+							"height": 25,
+							"text": "UGroup，用户组"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnu//q9tOQqwc=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 415,
+							"width": 393,
+							"height": 25,
+							"text": "[User]，用户名，如果指定了此参数，则仅返回对应用户的信息"
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnvAq/eNccJf4=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1015,
+							"width": 401,
+							"height": 97
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnvAq/eNcdS/w=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1119,
+							"width": 401,
+							"height": 162
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnvAq/eNceDMI=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 642,
+							"top": 1015,
+							"width": 345,
+							"height": 97
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnvAq/eNcf9bg=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 642,
+							"top": 1119,
+							"width": 345,
+							"height": 162
+						},
+						{
+							"_type": "RectangleView",
+							"_id": "AAAAAAFnvAq/eNcgiLQ=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 26,
+							"top": 1015,
+							"width": 209,
+							"height": 41
+						},
+						{
+							"_type": "UMLTextView",
+							"_id": "AAAAAAFnvAq/eNchCrs=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 26,
+							"top": 1023,
+							"width": 209,
+							"height": 25,
+							"text": "【CLIENT】Login2"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvAq/eNciSFk=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1016,
+							"width": 393,
+							"height": 25,
+							"text": "User，用户名；"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvAq/eNcjJmQ=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1040,
+							"width": 393,
+							"height": 25,
+							"text": "Pwd，密码；"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvAq/eNckv6o=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1119,
+							"width": 393,
+							"height": 25,
+							"text": "Error，错误文本，登陆成功为空；"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvAq/eNclRZ4=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1147,
+							"width": 393,
+							"height": 25,
+							"text": "User，用户名"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvAq/eNcmAgs=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1171,
+							"width": 393,
+							"height": 25,
+							"text": "NickName，昵称"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvAq/eNcn3SI=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1195,
+							"width": 393,
+							"height": 25,
+							"text": "Motto，签名"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvAq/eNcontQ=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 242,
+							"top": 1219,
+							"width": 393,
+							"height": 25,
+							"text": "UGroup，用户组"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvA5u3ddUbgk=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 240,
+							"top": 1240,
+							"width": 393,
+							"height": 25,
+							"text": "Photo，头像数据长度"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvA/XXNdmAfY=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 640,
+							"top": 1120,
+							"width": 337,
+							"height": 25,
+							"text": "头像数据"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBLyndd44Jo=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 559,
+							"width": 393,
+							"height": 25,
+							"text": "Total，总用户数"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBNcDtd/KG8=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 584,
+							"width": 393,
+							"height": 25,
+							"text": "Count，当前数据序号"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBTLRNeJ17c=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 752,
+							"width": 393,
+							"height": 25,
+							"text": "Photo，头像数据长度"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBTLRNeKCi0=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 729,
+							"width": 393,
+							"height": 25,
+							"text": "UGroup，用户组"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBTLRNeLZ8c=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 705,
+							"width": 393,
+							"height": 25,
+							"text": "Motto，签名"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBTLRdeMLdQ=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 681,
+							"width": 393,
+							"height": 25,
+							"text": "NickName，昵称"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBTLRdeN5CY=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1270,
+							"top": 657,
+							"width": 393,
+							"height": 25,
+							"text": "User，用户名"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvBakXNefJXw=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1672,
+							"top": 536,
+							"width": 333,
+							"height": 25,
+							"text": "头像数据"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvE9vhOFyodw=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1289.080078125,
+							"top": 608,
+							"width": 373.919921875,
+							"height": 25,
+							"text": "从1开始递增；"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnvE+VU+F3e0s=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1289.080078125,
+							"top": 632,
+							"width": 373.919921875,
+							"height": 25,
+							"text": "最后一个包值为-1，仅作结束封包而不包含数据；"
 						}
 					]
 				},
@@ -12829,23 +13278,6 @@
 											"width": 183,
 											"height": 13,
 											"text": "UpdateUserInfo",
-											"horizontalAlignment": 0
-										},
-										{
-											"_type": "UMLEnumerationLiteralView",
-											"_id": "AAAAAAFnsPKEYJLJYuI=",
-											"_parent": {
-												"$ref": "AAAAAAFnsPKEYJK/Zus="
-											},
-											"model": {
-												"$ref": "AAAAAAFnsPB3Go7eRpA="
-											},
-											"font": "Arial;13;0",
-											"left": 29,
-											"top": 266,
-											"width": 183,
-											"height": 13,
-											"text": "GetUserPhoto",
 											"horizontalAlignment": 0
 										}
 									],
