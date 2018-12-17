@@ -256,8 +256,15 @@ func (session *Session) GetUserPhotoHandler(headInfo map[string]string) {
 	head := make(map[string]string)
 	head[keyname_token] = headInfo[keyname_token]
 	head[keyname_operation] = headInfo[keyname_operation]
+	head["Length"] = "0"
 	head["Error"] = ""
-	photo := GetUserPhoto(session.sender.User)
+	var photo []byte
+	if username, ok := headInfo["User"]; ok {
+		photo = GetUserPhoto(username)
+	} else {
+		photo = GetUserPhoto(session.sender.User)
+	}
+	head["Length"] = string(len(photo))
 	session.SendData(head, photo)
 }
 

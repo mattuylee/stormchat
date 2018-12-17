@@ -9101,10 +9101,10 @@
 							},
 							"font": "Arial;13;0",
 							"left": 1268,
-							"top": 481,
+							"top": 505,
 							"width": 393,
 							"height": 25,
-							"text": "Error，错误文本，成功为空；"
+							"text": "Error，保留，总是为空；"
 						},
 						{
 							"_type": "UMLNoteView",
@@ -9144,6 +9144,32 @@
 							"width": 393,
 							"height": 25,
 							"text": "NeedResullt，当此字段不为0时要求服务器返回处理结果"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnui/PRD4Nkb0=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1268,
+							"top": 376,
+							"width": 393,
+							"height": 25,
+							"text": "User，要获取头像的用户名"
+						},
+						{
+							"_type": "UMLNoteView",
+							"_id": "AAAAAAFnujFC6j4ew94=",
+							"_parent": {
+								"$ref": "AAAAAAFnCJD5xebaqTo="
+							},
+							"font": "Arial;13;0",
+							"left": 1268,
+							"top": 480,
+							"width": 393,
+							"height": 25,
+							"text": "Length，头像数据长度，为0则头像数据无效；"
 						}
 					]
 				},
@@ -10236,7 +10262,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnp7WMX/VycEU="
 							},
-							"name": "event OnPanic"
+							"name": "event OnPanic",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10244,7 +10271,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnp7WMX/VycEU="
 							},
-							"name": "event OnOffline"
+							"name": "event OnOffline",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10252,7 +10280,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnp7WMX/VycEU="
 							},
-							"name": "event OnMessage"
+							"name": "event OnMessage",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10260,7 +10289,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnp7WMX/VycEU="
 							},
-							"name": "event OnSendMessageDone"
+							"name": "event OnSendMessageDone",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10268,7 +10298,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnp7WMX/VycEU="
 							},
-							"name": "event OnUpdateUserInfoDone"
+							"name": "event OnUpdateUserInfoDone",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10285,7 +10316,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnp7WMX/VycEU="
 							},
-							"name": "event OnGetUserListDone"
+							"name": "event OnGetUserListDone",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10293,7 +10325,8 @@
 							"_parent": {
 								"$ref": "AAAAAAFnp7WMX/VycEU="
 							},
-							"name": "event OnGetUserPhotoDoneHandler"
+							"name": "event OnGetUserPhotoDoneHandler",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -10386,7 +10419,8 @@
 									"_parent": {
 										"$ref": "AAAAAAFnp8DShvXnMlE="
 									},
-									"name": "callback"
+									"name": "callback",
+									"type": ""
 								}
 							]
 						},

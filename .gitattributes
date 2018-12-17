@@ -1,5 +1,5 @@
 ##set starUML design file to binary
-*.mdj binary
+*.mdj   binary
 
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
