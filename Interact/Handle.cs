@@ -50,7 +50,10 @@ namespace Interact
 		{
 			//发起登录完成事件
 			if (head.Error != "")
+			{
 				OnLoginDone?.Invoke(head, null);
+				return;
+			}
 			JObject dataObj = (JObject)JsonConvert.DeserializeObject(Encoding.UTF8.GetString(data));
 			User user = new User
 			{
