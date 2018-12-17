@@ -21,6 +21,11 @@ namespace Interact
 		//错误文本，为空则执行成功
 		public string Error;
 	}
+	//获取单一用户信息结果包头
+	public class GetUserInfoResultHead : ResultHead
+	{
+		
+	}
 	#endregion
 
 	#region 定义Json序列化与反序列化时使用的数据结构，仅内部使用
@@ -52,5 +57,6 @@ namespace Interact
 	{
 		public string User;	//要获取头像的用户名
 	}
+	
 	#endregion
 }

@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Net.Sockets;
-using System.Net;
 using System.Threading;
 using System.Collections.Concurrent;
-using System.Drawing;
 using System.IO;
 
 namespace Interact
 {
 	//连接中断
-	public delegate void DisconnectHandler(Exception ex);
+	public delegate void ConnectionBrokenHandler(Exception ex);
 	//通用请求结果处理
 	public delegate void ResultHandler(ResultHead head);
 	//消息到达事件处理
@@ -21,9 +17,6 @@ namespace Interact
 	public delegate void LoginDoneHandler(ResultHead head, User user);
 	//获取用户列表结果处理
 	public delegate void GetUserListDoneHandler(ResultHead head, User[] users);
-	//获取用户头像结果处理
-	public delegate void GetUserPhotoDoneHandler(ResultHead head, Image image);
-
 
 	/// <summary>
 	/// 与服务器进行数据通信，并向外部提供一系列通信接口
@@ -31,7 +24,7 @@ namespace Interact
 	public static partial class StormClient
 	{
 		//连接中断事件
-		public static event DisconnectHandler OnDisconnect;
+		public static event ConnectionBrokenHandler OnDisconnect;
 		//服务器异常消息处理事件
 		public static event ResultHandler OnPanic;
 		//服务器强制注销登陆事件
@@ -45,37 +38,27 @@ namespace Interact
 		//登录结果处理事件
 		public static event LoginDoneHandler OnLoginDone;
 		//获取用户列表结果处理事件
-		public static event GetUserListDoneHandler OnGetUserListDone;
-		//获取用户头像结果处理事件
-		public static event GetUserPhotoDoneHandler OnGetUserPhotoDone;
+		private static event GetUserListDoneHandler OnGetUserListDone;
+		
+		//当前连接状态
+		public static ClientStatus Status
+		{
+			get { lock (statusLocker) { return clientStatus; } }
+			set { lock (statusLocker) { clientStatus = value; } }
+		}
 		//发送消息时是否要求服务器返回处理结果
 		public static bool DoesSendMessageReturn
 		{
-			get
-			{
-				return doesSendMessageReturn != 0;
-			}
-			set
-			{
-				Interlocked.Exchange(ref StormClient.doesSendMessageReturn, value ? 1 : 0);
-			}
+			get { lock (doesSendMessageReturnLocker) { return doesSendMessageReturnResult; } }
+			set { lock (doesSendMessageReturnLocker) { doesSendMessageReturnResult = value; } }
 		}
-
-		//TCP客户端
-		private static TcpClient tcpClient;
-		//消息发送队列
-		private static BlockingCollection<Packet> sendQueue;
-		//数据读取线程
-		private static Thread readLoopThread;
-		//数据发送线程
-		private static Thread sendLoopThread;
-		//发送消息时是否要求服务器返回处理结果
-		private static volatile int doesSendMessageReturn = 0;
+		
 
 		static StormClient()
 		{
 			tcpClient = new TcpClient();
 			sendQueue = new BlockingCollection<Packet>();
+			Status = ClientStatus.Uninitialized;
 		}
 
 		/// <summary>
@@ -87,7 +70,14 @@ namespace Interact
 		{
 			if (StormClient.tcpClient.Connected)
 				return true;
-			StormClient.tcpClient.Connect(Interact.Properties.Resources.RemoteServerAddr, int.Parse(Interact.Properties.Resources.RemoteServerPort));
+			try
+			{
+				StormClient.tcpClient.Connect(Interact.Properties.Resources.RemoteServerAddr, int.Parse(Interact.Properties.Resources.RemoteServerPort));
+			}
+			catch (Exception)
+			{
+				return false;
+			}
 			if (!StormClient.tcpClient.Connected)
 				return false;
 			if (sendLoopThread != null)
@@ -97,8 +87,8 @@ namespace Interact
 			//启动数据收发线程
 			sendLoopThread = new Thread(new ThreadStart(SendLoop));
 			readLoopThread = new Thread(new ThreadStart(ReadLoop));
-			//设置为后台线程
 			sendLoopThread.IsBackground = readLoopThread.IsBackground = true;
+			StormClient.Status = ClientStatus.Running;
 			sendLoopThread.Start();
 			readLoopThread.Start();
 			return true;
@@ -116,7 +106,7 @@ namespace Interact
 			JsonLogInfoHead logInfo = new JsonLogInfoHead()
 			{
 				Token = "",
-				Operation = Operations.Login.ToString(),
+				Operation = Operations.Login,
 				User = user,
 				Pwd = password
 			};
@@ -128,7 +118,7 @@ namespace Interact
 			};
 			return Send(packet);
 		}
-		
+
 		/// <summary>
 		/// 请求发送一条消息。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
@@ -141,7 +131,7 @@ namespace Interact
 			JsonSendMessageHead jsonObj = new JsonSendMessageHead()
 			{
 				Token = "",
-				Operation = Operations.SendMessage.ToString(),
+				Operation = Operations.SendMessage,
 				To = to.Name,
 				NeedResult = DoesSendMessageReturn ? "1" : "0"
 			};
@@ -153,7 +143,7 @@ namespace Interact
 			};
 			return Send(packet);
 		}
-		
+
 		/// <summary>
 		/// 请求登出。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
@@ -164,7 +154,7 @@ namespace Interact
 			BaseHead jsonObj = new BaseHead()
 			{
 				Token = "",
-				Operation = Operations.Logout.ToString(),
+				Operation = Operations.Logout,
 			};
 			Packet packet = new Packet
 			{
@@ -174,7 +164,7 @@ namespace Interact
 			};
 			return Send(packet);
 		}
-		
+
 		/// <summary>
 		/// 请求用户列表。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
@@ -185,7 +175,7 @@ namespace Interact
 			BaseHead jsonObj = new BaseHead()
 			{
 				Token = "",
-				Operation = Operations.GetUserList.ToString(),
+				Operation = Operations.GetUsers,
 			};
 			Packet packet = new Packet
 			{
@@ -195,7 +185,7 @@ namespace Interact
 			};
 			return Send(packet);
 		}
-		
+
 		/// <summary>
 		/// 请求更新当前登录用户信息。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
@@ -203,8 +193,8 @@ namespace Interact
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		public static bool QueueUpdateUserInfo(UserInfo userInfo, Action<BaseHead> callback = null)
 		{
-			byte[] photoData = null;	//头像数据
-			//将头像数据转换到字符数组
+			byte[] photoData = null;    //头像数据
+										//将头像数据转换到字符数组
 			if (userInfo.Photo != null)
 			{
 				MemoryStream memStream = new MemoryStream();
@@ -217,7 +207,7 @@ namespace Interact
 			JsonUserInfoHead jsonObj = new JsonUserInfoHead()
 			{
 				Token = "",
-				Operation = Operations.UpdateUserInfo.ToString(),
+				Operation = Operations.UpdateUserInfo,
 				NickName = userInfo.NickName,
 				Password = userInfo.Password,
 				Motto = userInfo.Motto,
@@ -231,28 +221,13 @@ namespace Interact
 			};
 			return Send(packet);
 		}
-		
-		/// <summary>
-		/// 请求获取指定用户的头像。异步，此方法将请求放入请求队列后返回。
-		/// </summary>
-		/// <param name="user">要获取头像的用户</param>
-		/// <param name="callback">数据发送完毕时回调函数</param>
-		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-		public static bool QueueGetUserPhoto(User user, Action<BaseHead> callback = null)
+
+		//客户端连接状态
+		public enum ClientStatus
 		{
-			JsonGetUserPhotoHead jsonObj = new JsonGetUserPhotoHead()
-			{
-				Token = "",
-				Operation = Operations.GetUserPhoto.ToString(),
-				User = user.Name
-			};
-			Packet packet = new Packet
-			{
-				Head = jsonObj,
-				Data = null,
-				CallBack = callback
-			};
-			return Send(packet);
+			Uninitialized,  //未启动
+			Running,        //运行中
+			Stopped         //已停止
 		}
 	}
 }
