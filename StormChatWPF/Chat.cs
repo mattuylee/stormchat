@@ -19,20 +19,8 @@ namespace StormChatWPF
             StormClient.OnGetUserListDone += GetContactsList;
             StormClient.OnMessage +=ReciveMessage;
         }
+        internal User SetContact { get; set; }//设置当前联系人对象
 
-
-        private User ChatNow;
-        internal User SetContact
-        {
-            get
-            {
-                return ChatNow;
-            }
-            set
-            {
-                ChatNow = value;
-            }
-        }//设置当前联系人对象
         internal static void GetContactsList(ResultHead head, User[] users)
         {
             if (head.Error != "")
@@ -47,7 +35,10 @@ namespace StormChatWPF
         {
             if (StormClient.Initialize())
             {
-                StormClient.QueueLogin(user,password);
+                if (!StormClient.QueueLogin(user, password))
+                {
+                    MessageBox.Show("登录失败");
+                }
             }
             else
             {
@@ -68,7 +59,7 @@ namespace StormChatWPF
                     }
                     else
                     {
-                        MessageBox.Show("登录失败！");
+                        MessageBox.Show("请核对账号密码！");
                     }
                 });
         }//登录完成

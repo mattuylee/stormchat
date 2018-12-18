@@ -80,7 +80,7 @@ namespace Interact
 				return false;
 			}
 			
-			workingDictionary.Clear();	//清空临时记录
+			workingDictionary?.Clear();	//清空临时记录
 			if (sendLoopThread != null)
 				sendLoopThread.Abort();
 			if (readLoopThread != null)

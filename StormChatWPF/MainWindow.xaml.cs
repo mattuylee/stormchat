@@ -25,9 +25,9 @@ namespace StormChatWPF
         }
         private void AddUserList()
         {
-            if (Chat.userlist.Any())
+            if (Chat.ContactsList.Any())
             {
-                foreach (var user in Chat.userlist)
+                foreach (var user in Chat.ContactsList)
                 {
                     UsersList.Items.Add(user);
                 }

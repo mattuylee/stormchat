@@ -115,5 +115,11 @@
       <Name>Interact</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\登录界面底.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\闪电.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
