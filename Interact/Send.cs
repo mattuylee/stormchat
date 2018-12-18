@@ -14,11 +14,13 @@ namespace Interact
 		// 消息写入线程，向tcp连接写入数据
 		private static void SendLoop()
 		{
+			Packet packet = null;
 			NetworkStream stream = tcpClient.GetStream();
 			try
 			{
-				foreach (Packet packet in sendQueue.GetConsumingEnumerable())
+				foreach (Packet i in sendQueue.GetConsumingEnumerable())
 				{
+					packet = i;  //为了在代码块外引用i
 					//结束循环
 					if (StormClient.Status != ClientStatus.Running)
 						break;
@@ -37,8 +39,14 @@ namespace Interact
 					stream.Write(lenBuffer, 0, 4);
 					if (length > 0)
 						stream.Write(packet.Data, 0, packet.Data.Length);
-					//发送完成回调
-					packet.CallBack?.Invoke(packet.Head);
+					//发送成功回调
+					ResultHead result = new ResultHead
+					{
+						Token = packet.Head.Token,
+						Operation = packet.Head.Operation,
+						Error = ""
+					};
+					packet.CallBack?.Invoke(result);
 				}
 			}
 			catch (System.IO.IOException ex)
@@ -48,6 +56,28 @@ namespace Interact
 			catch (ObjectDisposedException ex)
 			{
                 HandleConnectionBroken(ex);
+			}
+			finally
+			{
+				List<Packet> packets = new List<Packet>(sendQueue.Count + 1);
+				if (packet != null)
+					packets.Add(packet);
+				while (sendQueue.TryTake(out packet))
+				{
+					if (packet != null)
+						packets.Add(packet);
+				}
+				foreach (Packet p in packets)
+				{
+					//发送失败回调
+					ResultHead result = new ResultHead
+					{
+						Token = packet.Head.Token,
+						Operation = packet.Head.Operation,
+						Error = "Client has stopped running."
+					};
+					packet.CallBack?.Invoke(result);
+				}
 			}
 		}
 		//发送数据
