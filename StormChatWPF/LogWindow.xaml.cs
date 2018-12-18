@@ -21,20 +21,22 @@ namespace StormChatWPF
     /// </summary>
     public partial class LogWindow : Window
     {
-        public static LogWindow a;
+        public static LogWindow Instence;
         public LogWindow()
         {
             InitializeComponent();
-            StormClient.OnLoginDone += Chat.HaveLogin;
-            StormClient.OnGetUserListDone += Chat.GetUserList;
-            StormClient.OnGetUserPhotoDone += Chat.GetUserPhoto;
-            a = this;
+            Instence = this;
         }
-        Chat chat = new Chat();
         private void Login_button_Click(object sender, RoutedEventArgs e)
         {
-            chat.Log(AccountBox.Text,passwordBox.Password);
+            Chat.chat.Log(AccountBox.Text,passwordBox.Password);
         }
+        internal void ShowMessage(Message message)
+        {
 
+        }//将收到的消息展现于UI界面
+        internal void ShowUserMessage()
+        {
+        }
     }
 }
