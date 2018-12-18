@@ -37,6 +37,7 @@ namespace StormChatWPF
         }//将收到的消息展现于UI界面
         internal void ShowUserMessage()
         {
-        }
+        }//展现自己发出的消息
+
     }
 }

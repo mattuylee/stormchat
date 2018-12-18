@@ -5,13 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StormChatWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-	<Grid Margin="0,0,-0.4,-1">
-		<Image x:Name="LogImage" Margin="0,0,0,181" Source="/RESOURCES/logFormBackground.jpg" Stretch="None"/>
-		<Button x:Name="Login_button" Content="LogIn" Margin="361,370,361,32" RenderTransformOrigin="0.664,1.51" Click="Login_button_Click"/>
-		<TextBox x:Name="AccountBox" Margin="346,263,340,0" TextWrapping="Wrap" Text="201701110203" Height="15" VerticalAlignment="Top" />
-		<PasswordBox x:Name="passwordBox" Margin="346,311,0,0" Password="1233211234567" RenderTransformOrigin="0.503,0.59" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="109"/>
-
-
+        Title="StormChat" Height="450" Width="800"
+		Icon="UI/闪电.png">
+	<Grid Height="418" VerticalAlignment="Stretch" Margin="2,1,1,1">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200*"/>
+			<ColumnDefinition Width="200*"/>
+			<ColumnDefinition Width="200*"/>
+			<ColumnDefinition Width="200*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="150*"/>
+			<RowDefinition Height="150*"/>
+			<RowDefinition Height="150*"/>
+		</Grid.RowDefinitions>
+		<Image x:Name="LogBackground"  Grid.ColumnSpan="4" Height="268" Margin="10,10,10,0" Grid.RowSpan="2" VerticalAlignment="Top" Source="UI/登录界面底.png"/>
+		<Button x:Name="Login_button" Content="LogIn" Click="Login_button_Click" Grid.ColumnSpan="2" Grid.Column="1" Grid.Row="2" Margin="160,70,160,45" Width="75"/>
+		<TextBox x:Name="AccountBox" TextWrapping="Wrap" Text="201701110203" Grid.Row="2" TextAlignment="Center" Margin="137.4,5,137.8,112.6" Grid.Column="1" Grid.ColumnSpan="2" Height="22" Width="120">
+			
+		</TextBox>
+		<PasswordBox x:Name="passwordBox" Password="1233211234567" Margin="135,35,135,0" Grid.Column="1" Grid.Row="2" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="22" Width="120"/>
 	</Grid>
 </Window>
