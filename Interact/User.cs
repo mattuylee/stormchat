@@ -11,7 +11,7 @@ namespace Interact
 	public class User
 	{
 		public static User Me;	//当前用户
-
+        public static string Password;//用户的密码
 		public string Name;     //用户名
 		public string NickName; //昵称
 		public string Motto;	//个性签名

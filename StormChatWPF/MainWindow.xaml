@@ -9,13 +9,14 @@
 		
 		>
 	<Grid>
-		<ListView x:Name="UsersList" HorizontalAlignment="Left" Height="346" VerticalAlignment="Top" Width="191" Margin="10,64,0,0" IsEnabled="False">
+		<ListView x:Name="UsersList" HorizontalAlignment="Left" Width="201" Margin="0,64,0,10" IsEnabled="True" SelectionChanged="UsersList_SelectionChanged">
 			<ListView.View>
 				<GridView>
 					<GridViewColumn/>
 				</GridView>
 			</ListView.View>
 		</ListView>
-
+		<TextBox HorizontalAlignment="Left" Height="90" Margin="201,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="583" />
+		<Button Content="Button" HorizontalAlignment="Left" Margin="378,262,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 	</Grid>
 </Window>

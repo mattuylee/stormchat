@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:StormChatWPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-	<Grid>
-		<Image x:Name="LogImage" HorizontalAlignment="Left" Height="230" Margin="10,10,0,0" VerticalAlignment="Top" Width="774" Source="/RESOURCES/logFormBackground.jpg" Stretch="None"/>
-		<Button x:Name="Login_button" Content="LogIn" HorizontalAlignment="Left" Margin="240,376,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.664,1.51" Click="Login_button_Click"/>
-		<TextBox x:Name="AccountBox" HorizontalAlignment="Left" Height="23" Margin="240,290,0,0" TextWrapping="Wrap" Text="201701110203" VerticalAlignment="Top" Width="120" />
-		<PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="240,332,0,0" VerticalAlignment="Top" Width="120" Password="1233211234567"/>
+	<Grid Margin="0,0,-0.4,-1">
+		<Image x:Name="LogImage" Margin="0,0,0,181" Source="/RESOURCES/logFormBackground.jpg" Stretch="None"/>
+		<Button x:Name="Login_button" Content="LogIn" Margin="361,370,361,32" RenderTransformOrigin="0.664,1.51" Click="Login_button_Click"/>
+		<TextBox x:Name="AccountBox" Margin="346,263,340,0" TextWrapping="Wrap" Text="201701110203" Height="15" VerticalAlignment="Top" />
+		<PasswordBox x:Name="passwordBox" Margin="346,311,0,0" Password="1233211234567" RenderTransformOrigin="0.503,0.59" Height="18" VerticalAlignment="Top" HorizontalAlignment="Left" Width="109"/>
 
 
 	</Grid>

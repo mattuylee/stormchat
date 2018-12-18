@@ -33,7 +33,20 @@ namespace StormChatWPF
                 }
             }
         }//向联系人列表listview中添加元素
-        
 
+        private void UsersList_Selected(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UsersList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddUserList();
+        }
     }
 }
