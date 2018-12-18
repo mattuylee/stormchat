@@ -3,6 +3,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.IO;
 
 namespace Interact
@@ -78,8 +79,8 @@ namespace Interact
 			{
 				return false;
 			}
-			if (!StormClient.tcpClient.Connected)
-				return false;
+			
+			workingDictionary.Clear();	//清空临时记录
 			if (sendLoopThread != null)
 				sendLoopThread.Abort();
 			if (readLoopThread != null)
