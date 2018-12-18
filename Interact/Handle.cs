@@ -41,11 +41,17 @@ namespace Interact
 				HandlePanic(GetResultHead(jsonObj));
 				break;
 			case Operations.TransMessage:
-
+				break;
 			case Operations.SendMessage:
+				break;
 			case Operations.Logout:
+				break;
 			case Operations.Offline:
+				break;
 			case Operations.UpdateUserInfo:
+				break;
+			case Operations.GetUsers:
+				break;
 			default:
 				break;
 			}
@@ -80,13 +86,12 @@ namespace Interact
 				OnLoginDone?.Invoke(resultHead, null);
 				return;
 			}
-			JObject dataObj = (JObject)JsonConvert.DeserializeObject(Encoding.UTF8.GetString(data));
 			User user = new User
 			{
 				Name = head[AttrNames.User].ToString(),
 				NickName = head[AttrNames.NickName].ToString(),
 				Motto = head[AttrNames.Motto].ToString(),
-				Group = (UserGroup)Enum.Parse(typeof(UserGroup), dataObj[AttrNames.UGroup].ToString()),
+				Group = (UserGroup)Enum.Parse(typeof(UserGroup), head[AttrNames.UGroup].ToString()),
 				Photo = User.DefaultPhoto
 			};
 			if (int.Parse(head[AttrNames.Photo].ToString()) > 0)
@@ -95,6 +100,17 @@ namespace Interact
 				user.Photo = Image.FromStream(ms);
 			} //用户头像数据
 			OnLoginDone?.Invoke(resultHead, user);
+		}
+
+		//处理获取用户列表的不连续返回包。当所有包接收完毕后返回给客户
+		private static void HandleGetUsersPack(JObject head, byte[] data)
+		{
+			if (head[AttrNames.Error].ToString() != string.Empty)
+			{
+				OnGetUserListDone?.Invoke(GetResultHead(head), null);
+				return;
+			} //获取失败
+
 		}
 		#endregion
 
