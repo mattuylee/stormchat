@@ -11,18 +11,38 @@ namespace StormChatWPF
 {
     class Chat
     {
-        public static User[] userlist;//联系人集合
-        public static User ChatNow = new User();//当前聊天对象
-        
-        internal static void GetUserList(ResultHead head, User[] users)
+        public static List<User> ContactsList;//联系人集合
+        public  static  Chat chat = new Chat();
+        private Chat()
+        {
+            StormClient.OnLoginDone += HaveLogin;
+            StormClient.OnGetUserListDone += GetContactsList;
+            StormClient.OnMessage +=ReciveMessage;
+        }
+
+
+        private User ChatNow;
+        internal User SetContact
+        {
+            get
+            {
+                return ChatNow;
+            }
+            set
+            {
+                ChatNow = value;
+            }
+        }//设置当前联系人对象
+        internal static void GetContactsList(ResultHead head, User[] users)
         {
             if (head.Error != "")
             {
                 MessageBox.Show("无法获取联系人列表");
             }
             else
-                userlist = users;
-        }//获取联系人用户列表       
+                ContactsList =new List<User>( users);
+                return;
+        }//获取联系人列表
         internal void Log(string user,string password)
         {
             if (StormClient.Initialize())
@@ -34,10 +54,6 @@ namespace StormChatWPF
                 MessageBox.Show("连接服务器失败！");
             }
         }//登录
-        internal static void Reconnect(Exception e)
-        {
-            StormClient.Initialize();
-        }//尝试重连接一次，如果失败，则关闭mainwindow，打开登录窗口
         internal  static void HaveLogin(ResultHead head, User user)
         {
             App.Current.Dispatcher.Invoke(
@@ -48,7 +64,7 @@ namespace StormChatWPF
                         User.Me = user;
                         MainWindow userWindow = new MainWindow();
                         userWindow.Show();
-                        LogWindow.entry.Close();
+                        LogWindow.Instence.Close();
                     }
                     else
                     {
@@ -56,7 +72,19 @@ namespace StormChatWPF
                     }
                 });
         }//登录完成
+        internal static void  ReciveMessage(Message message)
+        {
+            LogWindow.Instence.ShowMessage(message);
+        }//接受到新消息的时候
+        internal static void SendMessage(string text,User target)
+        {
+            //    Message msg = new Message(text);
+            //    Action<BaseHead> f  = delegate(BaseHead head) 
+            //    {
 
-
+            //    };
+            //    StormClient.QueueSendMessage(msg, target, f);
+            //    LogWindow.Instence.ShowUserMessage();
+        }
     }
 }
