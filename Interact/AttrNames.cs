@@ -15,11 +15,18 @@ namespace Interact
 		//处理结果信息
 		public const string Error = "Error";
 		
-		//用户信息
+		//获取用户信息
 		public const string User = "User";
 		public const string NickName = "NickName";
 		public const string Motto = "Motto";
 		public const string UGroup = "UGroup";
 		public const string Photo = "Photo";
+		public const string Total = "Total";
+		public const string Count = "Count";
+
+		//消息
+		public const string When = "When";
+		public const string From = "From";
+		public const string To = "To";
 	}
 }

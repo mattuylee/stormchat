@@ -59,6 +59,7 @@ namespace Interact
 		{
 			tcpClient = new TcpClient();
 			sendQueue = new BlockingCollection<Packet>();
+			workingDictionary = new Dictionary<string, object>();
 			Status = ClientStatus.Uninitialized;
 		}
 
@@ -79,8 +80,7 @@ namespace Interact
 			{
 				return false;
 			}
-			
-			workingDictionary.Clear();	//清空临时记录
+			workingDictionary?.Clear();	//清空临时记录
 			if (sendLoopThread != null)
 				sendLoopThread.Abort();
 			if (readLoopThread != null)
@@ -102,11 +102,11 @@ namespace Interact
 		/// <param name="password">密码</param>
 		/// <param name="callback">数据发送完毕回调函数。注意，结果处理回调请设置OnLoginDone事件</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-		public static bool QueueLogin(string user, string password, Action<BaseHead> callback = null)
+		public static bool QueueLogin(string user, string password, Action<ResultHead> callback = null)
 		{
 			JsonLogInfoHead logInfo = new JsonLogInfoHead()
 			{
-				Token = "",
+				Token = Guid.NewGuid().ToString(),
 				Operation = Operations.Login,
 				User = user,
 				Pwd = password
@@ -127,19 +127,19 @@ namespace Interact
 		/// <param name="to">消息接收者</param>
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-		public static bool QueueSendMessage(string text, User to, Action<BaseHead> callback = null)
+		public static bool QueueSendMessage(Message message, Action<ResultHead> callback = null)
 		{
 			JsonSendMessageHead jsonObj = new JsonSendMessageHead()
 			{
 				Token = "",
 				Operation = Operations.SendMessage,
-				To = to.Name,
+				To = message.To.Name,
 				NeedResult = DoesSendMessageReturn ? "1" : "0"
 			};
 			Packet packet = new Packet
 			{
 				Head = jsonObj,
-				Data = Encoding.UTF8.GetBytes(text),
+				Data = Encoding.UTF8.GetBytes(message.Text),
 				CallBack = callback
 			};
 			return Send(packet);
@@ -150,7 +150,7 @@ namespace Interact
 		/// </summary>
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-		public static bool QueueLogout(Action<BaseHead> callback = null)
+		public static bool QueueLogout(Action<ResultHead> callback = null)
 		{
 			BaseHead jsonObj = new BaseHead()
 			{
@@ -171,7 +171,7 @@ namespace Interact
 		/// </summary>
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-		public static bool QueueGetUserList(Action<BaseHead> callback = null)
+		public static bool QueueGetUserList(Action<ResultHead> callback = null)
 		{
 			BaseHead jsonObj = new BaseHead()
 			{
@@ -192,7 +192,7 @@ namespace Interact
 		/// </summary>
 		/// <param name="callback">数据发送完毕时回调函数</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
-		public static bool QueueUpdateUserInfo(UserInfo userInfo, Action<BaseHead> callback = null)
+		public static bool QueueUpdateUserInfo(UserInfo userInfo, Action<ResultHead> callback = null)
 		{
 			byte[] photoData = null;    //头像数据
 										//将头像数据转换到字符数组
