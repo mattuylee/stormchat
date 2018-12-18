@@ -23,6 +23,7 @@ namespace StormChat
 		private void LogForm_Load(object sender, EventArgs e)
 		{
 			StormClient.OnLoginDone += this.LoginDone;
+			StormClient.OnMessage += this.ShowMessage;
 		}
 		private void btnLogin_Click(object sender, EventArgs e)
 		{
@@ -56,6 +57,11 @@ namespace StormChat
 				this.Invoke(f);
 			else
 				f.Invoke();
+		}
+
+		private void ShowMessage(Interact.Message m)
+		{
+			MessageBox.Show(m.Text);
 		}
 	}
 }

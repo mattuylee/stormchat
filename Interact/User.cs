@@ -10,8 +10,31 @@ namespace Interact
 	//用户
 	public class User
 	{
-		public static User Me;  //当前用户
-		public static Image DefaultPhoto; //默认头像
+		//根据用户名匹配用户。如果用户不存在，则返回一个仅用户名有效的实例
+		internal static User FromUserName(string userName)
+		{
+			if(User.Users != null)
+			{
+				foreach (User user in User.Users)
+				{
+					if (user.Name == userName)
+						return user;
+				}
+			}
+			User unidentifiedUser = new User
+			{
+				Name = userName,
+				NickName = "",
+				Motto = "",
+				Group = UserGroup.User,
+				Photo = User.DefaultPhoto
+			};
+			return unidentifiedUser;
+		}
+		internal static User[] Users;		//用户列表。仅Interact内部访问
+
+		public static User Me;				//当前用户
+		public static Image DefaultPhoto;	//默认头像
 
 		public string Name;     //用户名
 		public string NickName; //昵称
