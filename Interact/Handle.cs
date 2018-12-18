@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Drawing;
+using System.IO;
 
 //StormClient对数据的处理相关内容
 
@@ -33,7 +35,7 @@ namespace Interact
 			switch (jsonObj[AttrNames.Operation].ToString())
 			{
 			case Operations.Login:
-				HandleLoginResult(GetResultHead(jsonObj), data);
+				HandleLoginResult(jsonObj, data);
 				break;
 			case Operations.Panic:
 				HandlePanic(GetResultHead(jsonObj));
@@ -68,23 +70,31 @@ namespace Interact
 		}
 
 		//处理登录反馈消息
-		private static void HandleLoginResult(ResultHead head, byte[] data)
+		private static void HandleLoginResult(JObject head, byte[] data)
 		{
+			//提取结果包头
+			ResultHead resultHead = GetResultHead(head);
 			//发起登录完成事件
-			if (head.Error != "")
+			if (head[AttrNames.Error].ToString() != "")
 			{
-				OnLoginDone?.Invoke(head, null);
+				OnLoginDone?.Invoke(resultHead, null);
 				return;
 			}
 			JObject dataObj = (JObject)JsonConvert.DeserializeObject(Encoding.UTF8.GetString(data));
 			User user = new User
 			{
-				Name = dataObj[AttrNames.User].ToString(),
-				NickName = dataObj[AttrNames.NickName].ToString(),
-				Motto = dataObj[AttrNames.Motto].ToString(),
-				Group = (UserGroup)Enum.Parse(typeof(UserGroup), dataObj[AttrNames.UGroup].ToString())
+				Name = head[AttrNames.User].ToString(),
+				NickName = head[AttrNames.NickName].ToString(),
+				Motto = head[AttrNames.Motto].ToString(),
+				Group = (UserGroup)Enum.Parse(typeof(UserGroup), dataObj[AttrNames.UGroup].ToString()),
+				Photo = User.DefaultPhoto
 			};
-			OnLoginDone?.Invoke(head, user);
+			if (int.Parse(head[AttrNames.Photo].ToString()) > 0)
+			{
+				MemoryStream ms = new MemoryStream(data);
+				user.Photo = Image.FromStream(ms);
+			} //用户头像数据
+			OnLoginDone?.Invoke(resultHead, user);
 		}
 		#endregion
 

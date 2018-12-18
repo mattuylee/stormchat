@@ -10,7 +10,8 @@ namespace Interact
 	//用户
 	public class User
 	{
-		public static User Me;	//当前用户
+		public static User Me;  //当前用户
+		public static Image DefaultPhoto; //默认头像
 
 		public string Name;     //用户名
 		public string NickName; //昵称
