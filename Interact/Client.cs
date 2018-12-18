@@ -38,7 +38,7 @@ namespace Interact
 		//登录结果处理事件
 		public static event LoginDoneHandler OnLoginDone;
 		//获取用户列表结果处理事件
-		private static event GetUserListDoneHandler OnGetUserListDone;
+		public  static event GetUserListDoneHandler OnGetUserListDone;
 		
 		//当前连接状态
 		public static ClientStatus Status

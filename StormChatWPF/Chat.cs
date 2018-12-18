@@ -12,8 +12,16 @@ namespace StormChatWPF
     class Chat
     {
         public static List<User> userlist = new List<User>();//联系人集合
-
+        public  static  Chat chat = new Chat();
+        private Chat()
+        {
+            StormClient.OnLoginDone += HaveLogin;
+            StormClient.OnGetUserListDone += GetUserList;
+            StormClient.OnMessage +=ReciveMessage;
+        }
         
+
+     
         internal static void GetUsers(ResultHandler head, User user)
         {
 
@@ -27,13 +35,6 @@ namespace StormChatWPF
             else
                 return;
         }//获取用户列表
-        internal static void GetUserPhoto(ResultHead head, Image image)
-        {
-            if (head.Error != "")
-            {
-                MessageBox.Show("无法读取用户图片");
-            }   
-        }//对用户头像进行赋值
         internal void Log(string user,string password)
         {
             if (StormClient.Initialize())
@@ -55,7 +56,7 @@ namespace StormChatWPF
                         User.Me = user;
                         MainWindow userWindow = new MainWindow();
                         userWindow.Show();
-                        LogWindow.a.Close();
+                        LogWindow.Instence.Close();
                     }
                     else
                     {
@@ -63,7 +64,19 @@ namespace StormChatWPF
                     }
                 });
         }//登录完成
-
-
+        internal static void  ReciveMessage(Message message)
+        {
+            LogWindow.Instence.ShowMessage(message);
+        }//接受到新消息的时候
+        internal static void SendMessage(string text,User target)
+        {
+            Message msg = new Message(text);
+            Action<BaseHead> f  = delegate(BaseHead head) 
+            {
+                
+            };
+            StormClient.QueueSendMessage(msg, target, f);
+            LogWindow.Instence.ShowUserMessage();
+        }
     }
 }
