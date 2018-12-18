@@ -11,30 +11,38 @@ namespace StormChatWPF
 {
     class Chat
     {
-        public static List<User> userlist = new List<User>();//联系人集合
+        public static List<User> ContactsList;//联系人集合
         public  static  Chat chat = new Chat();
         private Chat()
         {
             StormClient.OnLoginDone += HaveLogin;
-            StormClient.OnGetUserListDone += GetUserList;
+            StormClient.OnGetUserListDone += GetContactsList;
             StormClient.OnMessage +=ReciveMessage;
         }
-        
 
-     
-        internal static void GetUsers(ResultHandler head, User user)
+
+        private User ChatNow;
+        internal User SetContact
         {
-
-        }//获取联系人对象
-        internal static void GetUserList(ResultHead head, User[] users)
+            get
+            {
+                return ChatNow;
+            }
+            set
+            {
+                ChatNow = value;
+            }
+        }//设置当前联系人对象
+        internal static void GetContactsList(ResultHead head, User[] users)
         {
             if (head.Error != "")
             {
                 MessageBox.Show("无法获取联系人列表");
             }
             else
+                ContactsList =new List<User>( users);
                 return;
-        }//获取用户列表
+        }//获取联系人列表
         internal void Log(string user,string password)
         {
             if (StormClient.Initialize())
@@ -70,13 +78,13 @@ namespace StormChatWPF
         }//接受到新消息的时候
         internal static void SendMessage(string text,User target)
         {
-            Message msg = new Message(text);
-            Action<BaseHead> f  = delegate(BaseHead head) 
-            {
-                
-            };
-            StormClient.QueueSendMessage(msg, target, f);
-            LogWindow.Instence.ShowUserMessage();
+            //    Message msg = new Message(text);
+            //    Action<BaseHead> f  = delegate(BaseHead head) 
+            //    {
+
+            //    };
+            //    StormClient.QueueSendMessage(msg, target, f);
+            //    LogWindow.Instence.ShowUserMessage();
         }
     }
 }
