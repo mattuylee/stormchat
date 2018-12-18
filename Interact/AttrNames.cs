@@ -20,5 +20,6 @@ namespace Interact
 		public const string NickName = "NickName";
 		public const string Motto = "Motto";
 		public const string UGroup = "UGroup";
+		public const string Photo = "Photo";
 	}
 }

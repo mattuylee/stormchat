@@ -9,13 +9,23 @@ namespace Interact
 	//定义一则用户接收到的消息
 	public class Message
 	{
+		public Message() { }
+		public Message(string text, User Receiver)
+		{
+			When = DateTime.Now;
+			From = User.Me;
+			To = Receiver;
+			Text = text;
+		}
+		
 		/*保留
 		public const UInt32 MaxHeadLength = 4096; //最大包头长度
 		public const UInt32 MaxMessageLength = 0x6400000; //最大数据长度
 		*/
 		public DateTime When { get; } //服务器接收时间
-		public User From; //发送者
-		public string Content; //消息内容
+		public User From;		//消息发送者
+		public User To;			//消息接收者
+		public string Text;	//消息内容
 		
 		//将消息保存到数据库（保留）
 		protected bool Save() { return false; }
