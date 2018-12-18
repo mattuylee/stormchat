@@ -28,29 +28,29 @@ namespace Interact
 
 		#region 处理服务器数据
 		//根据包头信息处理数据
-		private static void HandleAll(byte[] headData, byte[] data)
+		private static void HandleAll(byte[] head, byte[] data)
 		{
-			string head = Encoding.UTF8.GetString(headData);
-			JObject jsonObj = (JObject)JsonConvert.DeserializeObject(head);
+			string headStr = Encoding.UTF8.GetString(head);
+			JObject jsonObj = (JObject)JsonConvert.DeserializeObject(headStr);
 			switch (jsonObj[AttrNames.Operation].ToString())
 			{
-			case Operations.Login:
-				HandleLoginResult(jsonObj, data);
-				break;
 			case Operations.Panic:
 				HandlePanic(GetResultHead(jsonObj));
 				break;
+			case Operations.Login:
+				HandleLoginResult(jsonObj, data);
+				break;
 			case Operations.TransMessage:
+				HandleMessage(jsonObj, data);
 				break;
 			case Operations.SendMessage:
-				break;
-			case Operations.Logout:
 				break;
 			case Operations.Offline:
 				break;
 			case Operations.UpdateUserInfo:
 				break;
 			case Operations.GetUsers:
+				HandleGetUsersPack(jsonObj, data);
 				break;
 			default:
 				break;
@@ -63,8 +63,9 @@ namespace Interact
 			{
 				Token = head[AttrNames.Token].ToString(),
 				Operation = head[AttrNames.Operation].ToString(),
-				Error = head[AttrNames.Error].ToString()
 			};
+			if (head[AttrNames.Error] != null)
+				resultHead.Error = head[AttrNames.Error].ToString();
 			return resultHead;
 		}
 
@@ -102,15 +103,67 @@ namespace Interact
 			OnLoginDone?.Invoke(resultHead, user);
 		}
 
+		//收到消息
+		private static void HandleMessage(JObject head, byte[] data)
+		{
+			//提取结果包头
+			ResultHead resultHead = GetResultHead(head);
+			Message message = new Message()
+			{
+				When = DateTime.Parse(head[AttrNames.When].ToString()),
+				From = User.FromUserName(head[AttrNames.From].ToString()),
+				To = User.Me,
+				Text = Encoding.UTF8.GetString(data)
+			};
+			OnMessage?.Invoke(message);
+		}
+
 		//处理获取用户列表的不连续返回包。当所有包接收完毕后返回给客户
 		private static void HandleGetUsersPack(JObject head, byte[] data)
 		{
+			ResultHead result = GetResultHead(head);
 			if (head[AttrNames.Error].ToString() != string.Empty)
 			{
-				OnGetUserListDone?.Invoke(GetResultHead(head), null);
+				OnGetUserListDone?.Invoke(result, new User[0]);
 				return;
 			} //获取失败
-
+			else if (int.Parse(head[AttrNames.Count].ToString()) <= 0)
+			{
+				User[] us;
+				if (workingDictionary.ContainsKey(result.Token))
+					us = workingDictionary[result.Token] as User[];
+				else
+					us = new User[0];
+				User.Users = us;
+				OnGetUserListDone?.Invoke(result, us);
+				return;
+			} //获取完成
+			//获取用户数据
+			User user = new User
+			{
+				Name = head[AttrNames.User].ToString(),
+				NickName = head[AttrNames.NickName].ToString(),
+				Motto = head[AttrNames.Motto].ToString(),
+				Group = (UserGroup)Enum.Parse(typeof(UserGroup), head[AttrNames.UGroup].ToString()),
+				Photo = User.DefaultPhoto
+			}; //基础数据
+			if (int.Parse(head[AttrNames.Photo].ToString()) > 0)
+			{
+				MemoryStream ms = new MemoryStream(data);
+				user.Photo = Image.FromStream(ms);
+			} //头像数据
+			//加入临时用户列表缓存
+			User[] users;
+			int total = int.Parse(head[AttrNames.Total].ToString()); //总用户数
+			int count = int.Parse(head[AttrNames.Count].ToString()); //已接收用户数
+			if (count > total)
+				return;
+			if (workingDictionary.ContainsKey(head[AttrNames.Token].ToString()))
+				users = workingDictionary[result.Token] as User[];
+			else
+				users = new User[total];
+			users[count - 1] = user;
+			workingDictionary[result.Token] = users;
 		}
 		#endregion
 
