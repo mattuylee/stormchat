@@ -9,14 +9,20 @@
 		
 		>
 	<Grid>
-		<ListView x:Name="UsersList" HorizontalAlignment="Left" Width="201" Margin="0,64,0,10" IsEnabled="True" SelectionChanged="UsersList_SelectionChanged">
-			<ListView.View>
-				<GridView>
-					<GridViewColumn/>
-				</GridView>
-			</ListView.View>
-		</ListView>
-		<TextBox HorizontalAlignment="Left" Height="90" Margin="201,320,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="583" />
-		<Button Content="Button" HorizontalAlignment="Left" Margin="378,262,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="60*"/>
+			<RowDefinition Height="300*"/>
+			<RowDefinition Height="90*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="200*"/>
+			<ColumnDefinition Width="200*"/>
+			<ColumnDefinition Width="200*"/>
+			<ColumnDefinition Width="200*"/>
+		</Grid.ColumnDefinitions>
+		<ListView x:Name="UsersList" Margin="0,0,0,0" IsEnabled="True" SelectionChanged="UsersList_SelectionChanged" Grid.Row="1" Grid.RowSpan="2"/>
+		<TextBox x:Name="InputBox" Margin="0,0,0,0" TextWrapping="Wrap" Text="" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="1" />
+		<Button Content="Send" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="75" Click="Button_Click" Height="20" Grid.Row="2" Grid.Column="3"/>
+		<StackPanel x:Name="OutBox" Margin="0,0,0,0" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1"/>
 	</Grid>
 </Window>
