@@ -48,8 +48,16 @@ namespace StormChatWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            Chat.chat.SendMessage(InputBox.Text,Chat.CurrentContact);
-            InputBox.Text = "";
+            if (Chat.CurrentContact == null)
+            {
+                MessageBox.Show("请选择联系人！");
+                return;
+            }
+            if (InputBox.Text!="")
+            {
+                Chat.chat.SendMessage(InputBox.Text, Chat.CurrentContact);
+                InputBox.Text = "";
+            }
         }
 
         internal void ShowMessage(Message message)

@@ -31,7 +31,7 @@ namespace StormChatWPF
         {
             Background = new ImageBrush()
             {
-                ImageSource=new BitmapImage(new Uri("pack://application..../UI/Resource/聊天气泡.png"))
+                ImageSource=new BitmapImage(new Uri("pack://application:,,,/UI/Resources/聊天气泡.png"))
             };
             HorizontalAlignment = alignment;
             text.Text = msg.Text;
