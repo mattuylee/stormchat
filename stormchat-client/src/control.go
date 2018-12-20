@@ -9,7 +9,7 @@ const (
 	//最大头像大小
 	max_photo_size uint32 = 0x400000 //4M
 	//服务器地址
-	server_addr string = "mattuy.top:3727"
+	server_addr string = "localhost:3727"
 )
 
 //用户组

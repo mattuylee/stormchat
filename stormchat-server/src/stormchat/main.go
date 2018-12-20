@@ -27,6 +27,7 @@ func main() {
 	} //服务模式
 	//交互模式
 	go server.AcceptLoop(tcpListener)
+	Debug("Server Working")
 	for {
 		inputReader := bufio.NewReader(os.Stdin)
 		cmd, _ := inputReader.ReadString('\n')

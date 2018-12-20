@@ -90,8 +90,12 @@ func (session *Session) ReceiveLoop() {
 			session.SendPanic("", "Failed to unmarshal head.")
 			continue
 		}
-		if session.sender == nil && headInfo[keyname_operation] != operation_login {
-			session.SendPanic("", "MUST LOGIN")
+		if session.sender == nil && headInfo[keyname_operation] != operation_login && headInfo[keyname_operation] != operation_login_old1 {
+			returnHead := make(map[string]string)
+			returnHead[keyname_token] = headInfo[keyname_token]
+			returnHead[keyname_operation] = headInfo[keyname_operation]
+			returnHead["Error"] = "Permission failed. Please sign in."
+			session.SendData(returnHead, nil)
 			continue
 		} //抛弃未登录用户的消息
 		switch headInfo[keyname_operation] {
@@ -155,21 +159,25 @@ func (session *Session) LoginHandler(headInfo map[string]string) {
 	returnInfo[keyname_operation] = headInfo[keyname_operation]
 	returnInfo[keyname_token] = headInfo[keyname_token]
 	returnInfo["Error"] = ""
+	var user *UserInfo //用户信息
+	//已经登录
 	if session.status != session_status_created {
+		user = session.sender
 		session.SendData(returnInfo, nil)
-		return
-	} //已登录
-	user := Login(headInfo["User"], headInfo["Pwd"])
-	if user == nil {
-		Debug("Bad login: illegal user.")
-		returnInfo["Error"] = "Illegal User."
-		session.SendData(returnInfo, nil)
-		return
+	} else {
+		//登录
+		user = Login(headInfo["User"], headInfo["Pwd"])
+		if user == nil {
+			Debug("Bad login: illegal user.")
+			returnInfo["Error"] = "Illegal User."
+			session.SendData(returnInfo, nil)
+			return
+		}
+		session.sender = user
+		session.status = session_status_running
+		session.Offline(server.sessionMap[session.sender.User], "The account is logged by another client.")
+		server.sessionMap[session.sender.User] = session
 	}
-	session.sender = user
-	session.status = session_status_running
-	session.Offline(server.sessionMap[session.sender.User], "The account is logged by another client.")
-	server.sessionMap[session.sender.User] = session
 	returnInfo["User"] = user.User
 	returnInfo["NickName"] = user.NickName
 	returnInfo["Motto"] = user.Motto
@@ -180,7 +188,7 @@ func (session *Session) LoginHandler(headInfo map[string]string) {
 	} else {
 		photo = GetUserPhoto(session.sender.User)
 	}
-	returnInfo["Photo"] = string(len(photo))
+	returnInfo["Photo"] = strconv.Itoa(len(photo))
 	session.SendData(returnInfo, photo)
 	//转发用户未读消息
 	go session.TransUnreadedMessages(session.sender)
@@ -264,7 +272,7 @@ func (session *Session) UpdateUserInfoHandler(headInfo map[string]string, data [
 func (session *Session) GetUsersHandler(headInfo map[string]string) {
 	result := make(map[string]string)
 	result[keyname_token] = headInfo[keyname_token]
-	result[keyname_operation] = headInfo[operation_update_userinfo]
+	result[keyname_operation] = headInfo[keyname_operation]
 	result["Error"] = ""
 	users := make([]UserInfo, 1) //用户列表
 	//获取特定用户信息
@@ -284,15 +292,15 @@ func (session *Session) GetUsersHandler(headInfo map[string]string) {
 	//发送用户数据
 	var photoData []byte //头像数据
 	result["Error"] = ""
-	result["Total"] = string(len(users)) //总用户数
+	result["Total"] = strconv.Itoa(len(users)) //总用户数
 	for i, curUser := range users {
 		photoData = GetUserPhoto(curUser.User)
-		result["Count"] = string(i + 1) //当前用户次序编号
+		result["Count"] = strconv.Itoa(i + 1) //当前用户次序编号
 		result["User"] = curUser.User
 		result["NickName"] = curUser.NickName
 		result["Motto"] = curUser.Motto
 		result["UGroup"] = curUser.UGroup
-		result["Photo"] = string(len(photoData)) //头像数据长度
+		result["Photo"] = strconv.Itoa(len(photoData)) //头像数据长度
 		session.SendData(result, photoData)
 	}
 	//发送用户列表结束封包
@@ -300,7 +308,7 @@ func (session *Session) GetUsersHandler(headInfo map[string]string) {
 	endingResult[keyname_token] = result[keyname_token]
 	endingResult[keyname_operation] = result[keyname_operation]
 	endingResult["Total"] = result["Total"]
-	endingResult["Count"] = string(-1)
+	endingResult["Count"] = strconv.Itoa(-1)
 	endingResult["Error"] = ""
 	session.SendData(endingResult, nil)
 }

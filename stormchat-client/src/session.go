@@ -32,7 +32,7 @@ func NewSession() *Session {
 	tcpAddr, _ := net.ResolveTCPAddr("tcp", server_addr)
 	conn, err := net.DialTCP("tcp", nil, tcpAddr)
 	if err != nil {
-		PrintError("连接服务器失败")
+		PrintError("连接服务器失败：" + err.Error())
 		return nil
 	}
 	var session = new(Session)
