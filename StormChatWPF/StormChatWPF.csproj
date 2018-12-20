@@ -64,6 +64,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ScrollViewer.cs" />
+    <Compile Include="UI\ChatBubble.cs" />
     <Page Include="LogWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,11 +86,6 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -97,7 +93,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -108,19 +104,19 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\LogFormBackground.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Interact\Interact.csproj">
       <Project>{cef054af-95b7-4b88-934e-02705feea554}</Project>
       <Name>Interact</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UI\登录界面底.png" />
+    <Resource Include="UI\Resources\登录界面底.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="UI\闪电.png" />
+    <Resource Include="UI\Resources\闪电.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\Resources\聊天气泡.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormChat", "StormChat\StormChat.csproj", "{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interact", "Interact\Interact.csproj", "{CEF054AF-95B7-4B88-934E-02705FEEA554}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StormChatWPF", "StormChatWPF\StormChatWPF.csproj", "{CF4D6BE0-A862-401F-A3A6-4FDAC32F5B70}"
@@ -19,18 +17,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Debug|x64.Build.0 = Debug|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Debug|x86.Build.0 = Debug|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Release|x64.ActiveCfg = Release|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Release|x64.Build.0 = Release|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Release|x86.ActiveCfg = Release|Any CPU
-		{01903AE6-FDB9-4FF4-8BE7-FDA238CEB5AD}.Release|x86.Build.0 = Release|Any CPU
 		{CEF054AF-95B7-4B88-934E-02705FEEA554}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CEF054AF-95B7-4B88-934E-02705FEEA554}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEF054AF-95B7-4B88-934E-02705FEEA554}.Debug|x64.ActiveCfg = Debug|Any CPU
