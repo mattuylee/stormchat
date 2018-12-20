@@ -29,14 +29,9 @@ namespace StormChatWPF
         }
         private void Login_button_Click(object sender, RoutedEventArgs e)
         {
-            Chat.chat.Log(AccountBox.Text,passwordBox.Password);
+            Chat.Log(AccountBox.Text,passwordBox.Password);
         }
-        internal void ShowMessage(Message message)
-        {
+       
 
-        }//将收到的消息展现于UI界面
-        internal void ShowUserMessage()
-        {
-        }
     }
 }

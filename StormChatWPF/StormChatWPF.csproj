@@ -63,6 +63,7 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ScrollViewer.cs" />
     <Page Include="LogWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +115,12 @@
       <Project>{cef054af-95b7-4b88-934e-02705feea554}</Project>
       <Name>Interact</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\登录界面底.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UI\闪电.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
