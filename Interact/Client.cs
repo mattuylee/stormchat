@@ -24,28 +24,43 @@ namespace Interact
 	/// </summary>
 	public static partial class StormClient
 	{
-		//连接中断事件
+		/// <summary>
+		/// 连接中断事件。注意，此事件并不保证连接中断时总是触发，例如主动关闭连接、登出操作
+		/// </summary>
 		public static event ConnectionBrokenHandler OnDisconnect;
-		//服务器异常消息处理事件
+		/// <summary>
+		/// 服务器异常消息处理事件
+		/// </summary>
 		public static event ResultHandler OnPanic;
-		//服务器强制注销登陆事件
+		/// <summary>
+		/// 服务器强制注销登陆事件
+		/// </summary>
 		public static event ResultHandler OnOffline;
-		//消息到达事件
+		/// <summary>
+		/// 消息到达事件
+		/// </summary>
 		public static event MessageHandler OnMessage;
-		//发送消息处理完成反馈事件（仅在DoesSendMessageReturn为true时有效）
+		/// <summary>
+		/// 发送消息处理完成反馈事件（仅在DoesSendMessageReturn为true时有效）
+		/// </summary>
 		public static event ResultHandler OnSendMessageDone;
-		//更新用户信息结果处理事件
+		/// <summary>
+		/// 更新用户信息结果处理事件
+		/// </summary>
 		public static event ResultHandler OnUpdateUserInfoDone;
-		//登录结果处理事件
+		/// <summary>
+		/// 登录结果处理事件
+		/// </summary>
 		public static event LoginDoneHandler OnLoginDone;
-		//获取用户列表结果处理事件
+		/// <summary>
+		/// 获取用户列表结果处理事件
+		/// </summary>
 		public static event GetUserListDoneHandler OnGetUserListDone;
 		
 		//当前连接状态
 		public static ClientStatus Status
 		{
 			get { lock (statusLocker) { return clientStatus; } }
-			set { lock (statusLocker) { clientStatus = value; } }
 		}
 		//发送消息时是否要求服务器返回处理结果
 		public static bool DoesSendMessageReturn
@@ -60,7 +75,13 @@ namespace Interact
 			tcpClient = new TcpClient();
 			sendQueue = new BlockingCollection<Packet>();
 			workingDictionary = new Dictionary<string, object>();
-			Status = ClientStatus.Uninitialized;
+			SetStatus(ClientStatus.Uninitialized);
+		}
+
+		//设置当前连接状态
+		internal static void SetStatus(ClientStatus value)
+		{
+			lock (statusLocker) { clientStatus = value; }
 		}
 
 		/// <summary>
@@ -89,7 +110,7 @@ namespace Interact
 			sendLoopThread = new Thread(new ThreadStart(SendLoop));
 			readLoopThread = new Thread(new ThreadStart(ReadLoop));
 			sendLoopThread.IsBackground = readLoopThread.IsBackground = true;
-			StormClient.Status = ClientStatus.Running;
+			SetStatus(ClientStatus.Running);
 			sendLoopThread.Start();
 			readLoopThread.Start();
 			return true;
@@ -125,7 +146,7 @@ namespace Interact
 		/// </summary>
 		/// <param name="text">要发送的消息文本</param>
 		/// <param name="to">消息接收者</param>
-		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <param name="callback">数据发送完毕时回调函数。</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		public static bool QueueSendMessage(Message message, Action<ResultHead> callback = null)
 		{
@@ -148,7 +169,7 @@ namespace Interact
 		/// <summary>
 		/// 请求登出。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
-		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <param name="callback">数据发送完毕时回调函数。</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		public static bool QueueLogout(Action<ResultHead> callback = null)
 		{
@@ -163,13 +184,15 @@ namespace Interact
 				Data = null,
 				CallBack = callback
 			};
-			return Send(packet);
+			bool success = Send(packet);
+			SetStatus(ClientStatus.Stopped);
+			return success;
 		}
 
 		/// <summary>
 		/// 请求用户列表。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
-		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <param name="callback">数据发送完毕时回调函数。</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		public static bool QueueGetUserList(Action<ResultHead> callback = null)
 		{
@@ -190,12 +213,13 @@ namespace Interact
 		/// <summary>
 		/// 请求更新当前登录用户信息。异步，此方法将请求放入请求队列后返回。
 		/// </summary>
-		/// <param name="callback">数据发送完毕时回调函数</param>
+		/// <param name="userInfo">新的用户信息，如果某项值为null，则不改变该项。</param>
+		/// <param name="callback">数据发送完毕时回调函数。</param>
 		/// <returns>成功将请求加入发送队列返回true，否则返回false。</returns>
 		public static bool QueueUpdateUserInfo(UserInfo userInfo, Action<ResultHead> callback = null)
 		{
-			byte[] photoData = null;    //头像数据
-										//将头像数据转换到字符数组
+			byte[] photoData = null; //头像数据
+			//将头像数据转换到字符数组
 			if (userInfo.Photo != null)
 			{
 				MemoryStream memStream = new MemoryStream();
@@ -207,7 +231,7 @@ namespace Interact
 			//构建数据包
 			JsonUserInfoHead jsonObj = new JsonUserInfoHead()
 			{
-				Token = "",
+				Token = Guid.NewGuid().ToString(),
 				Operation = Operations.UpdateUserInfo,
 				NickName = userInfo.NickName,
 				Password = userInfo.Password,
@@ -223,7 +247,9 @@ namespace Interact
 			return Send(packet);
 		}
 
-		//客户端连接状态
+		/// <summary>
+		/// 客户端连接状态
+		/// </summary>
 		public enum ClientStatus
 		{
 			Uninitialized,  //未启动
