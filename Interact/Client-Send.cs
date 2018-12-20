@@ -16,8 +16,12 @@ namespace Interact
 		{
 			Packet packet = null;
 			NetworkStream stream = tcpClient.GetStream();
+			//json序列化时忽略值为null的项
+			JsonSerializerSettings setting = new JsonSerializerSettings();
+			setting.NullValueHandling = NullValueHandling.Ignore;
 			try
 			{
+				//阻塞式的从发送队列中取出数据
 				foreach (Packet i in sendQueue.GetConsumingEnumerable())
 				{
 					packet = i;  //为了在代码块外引用i
@@ -26,7 +30,7 @@ namespace Interact
 						break;
 					//向tcp连接写数据
 					byte[] lenBuffer; //数据长度缓存
-					byte[] headData = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(packet.Head));
+					byte[] headData = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(packet.Head, setting));
 					//写包头
 					lenBuffer = BitConverter.GetBytes((UInt32)IPAddress.HostToNetworkOrder(headData.Length));
 					stream.Write(lenBuffer, 0, 4);

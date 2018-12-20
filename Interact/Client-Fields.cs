@@ -18,8 +18,8 @@ namespace Interact
 		private static Thread readLoopThread;
 		//数据发送线程
 		private static Thread sendLoopThread;
-		//某些请求需要持续的等待服务器返回数据包，然后将所有数据包处理后提供给用户
-		//	，此字段用于暂存这些未接收完全的数据包。它的key是对应请求的Token字串。
+		//某些请求需要持续的等待服务器返回数据包，然后将所有数据包处理后提供给用户，
+		//	 此字段用于暂存这些未接收完全的数据包。它的key是对应请求的Token字串。
 		private static Dictionary<string, object> workingDictionary;
 
 		//属性控制字段，任何地方都不应该修改它们

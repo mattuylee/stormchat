@@ -13,7 +13,7 @@ namespace Interact
 {
 	public partial class StormClient
 	{
-		//处理连接中断异常
+		//处理连接中断异常。
 		private static void HandleConnectionBroken(Exception ex)
 		{
             lock (statusLocker)
@@ -44,10 +44,13 @@ namespace Interact
 				HandleMessage(jsonObj, data);
 				break;
 			case Operations.SendMessage:
+				HandleSendMessageResult(GetResultHead(jsonObj));
 				break;
 			case Operations.Offline:
+				HandlePanic(GetResultHead(jsonObj));
 				break;
 			case Operations.UpdateUserInfo:
+				HandleUpdateUserInfoDone(GetResultHead(jsonObj));
 				break;
 			case Operations.GetUsers:
 				HandleGetUsersPack(jsonObj, data);
@@ -72,8 +75,8 @@ namespace Interact
 		//处理服务器异常断开连接消息
 		private static void HandlePanic(ResultHead head)
 		{
-			ConnectionBrokenException ex = new ConnectionBrokenException(head.Error);
-			HandleConnectionBroken(ex);
+			SetStatus(ClientStatus.Stopped);
+			OnPanic?.Invoke(head);
 		}
 
 		//处理登录反馈消息
@@ -116,6 +119,25 @@ namespace Interact
 				Text = Encoding.UTF8.GetString(data)
 			};
 			OnMessage?.Invoke(message);
+		}
+
+		//发送消息执行结果
+		private static void HandleSendMessageResult(ResultHead head)
+		{
+			OnSendMessageDone?.Invoke(head);
+		}
+
+		//处理掉线、强制登出
+		private static void HandleOffiline(ResultHead head)
+		{
+			SetStatus(ClientStatus.Stopped);
+			OnOffline?.Invoke(head);
+		}
+
+		//处理更改信息结果
+		private static void HandleUpdateUserInfoDone(ResultHead head)
+		{
+			OnUpdateUserInfoDone?.Invoke(head);
 		}
 
 		//处理获取用户列表的不连续返回包。当所有包接收完毕后返回给客户
