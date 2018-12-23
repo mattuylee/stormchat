@@ -22,7 +22,7 @@
 
 <a name="intro"></a>
 ## 简介
-&emsp;&emsp;前段时间心血来潮想学习最近的明星编程语言Golang。于是想做个聊天小程序实践一下。程序基于TCP协议通信，更详细的设计见<a href="#design">设计思路</a>
+&emsp;&emsp;前段时间心血来潮想学习最近的明星编程语言Golang。于是想做个聊天小程序实践一下。程序基于TCP协议通信，更详细的设计见<a href="#design">设计思路</a>。
 
 &emsp;&emsp;用Golang实现了服务端程序，同时代码抄抄改改做了个Golang客户端，又由于输出问题，用C++写了个Windows控制台的简陋的[输出控制库](https://github.com/mattuylee/conctrl)，于是客户端在Windows上能看了（不过朋友说很丑>_<）。
 
@@ -67,12 +67,14 @@ Operation参数指定本次通信的请求。它决定了数据包的其他数�
 ## 环境配置
 
 <a name="env-config-dev"></a>
+
 1. ### 开发环境
     服务器端：Windows/Linux Golang 1.11  
     客户端-Go：Windows x64，C++，Golang 1.11  
     客户端-C#：Windows，.NET4.0，WPF，Newtonsoft.Json for .NET4.0
 
 <a name="env-config-run"></a>
+
 2. ### 运行环境
     服务器端：Linux/Windows, MySQL5.5+/MariaDB10.0+  
     客户端：Windows10 x64（其他平台没测试过）
@@ -86,6 +88,7 @@ Operation参数指定本次通信的请求。它决定了数据包的其他数�
 Go语言的部分（服务器程序和golang客户端程序）这块都在control.go文件中，C#客户端这边也没什么可配置的，也就是连接服务器的地址和端口。下面列出部分配置参数：
 
 <a name="soft-config-server"></a>
+
 ### 服务器端
 * **serveMode**  
     服务（后台）模式。如果此参数为true，日志输出到str_log_file参数指定的文件中，且Debug()函数将不输出内容。如果为false，日志输出和Debug()函数都将直接向控制台或终端输出。
@@ -109,11 +112,13 @@ Go语言的部分（服务器程序和golang客户端程序）这块都在contro
     MySQL数据库连接字符串。
 
 <a name="soft-config-client-go"></a>
+
 ### 客户端（Go）
 * server_addr  
     服务器地址和端口。
 
 <a name="soft-config-client-cs"></a>
+
 ### 客户端（C#）
 资源定义在StormChat解决方案，Interact项目的属性->资源中。
 * RemoteServerAddr  
@@ -136,6 +141,7 @@ Go语言的部分（服务器程序和golang客户端程序）这块都在contro
 > `cd DIR/stormchat`
 
 <a name="build-server"></a>
+
 1. ### 服务器端
 #### 切换到服务器端工程目录：
 > `cd stormchat-server`
@@ -183,6 +189,7 @@ Linux下执行下列命令以守护进程运行：
 Windows请自行探索。  
 
 <a name="build-client-go"></a>
+
 2. ### 客户端-Go
 > `cd DIR/stormchat/stormchat-client-golang/src`  
 > `go build`
@@ -190,6 +197,7 @@ Windows请自行探索。
 注意，**客户端运行时需要conctrl_x64.dll在运行目录**下，此文件在stormchat-client-golang/res/目录下。
 
 <a name="build-client-cs"></a>
+
 3. ### 客户端-C#
 Visual Studio 2015以上版本打开项目，直接编译即可。
 
