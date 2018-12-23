@@ -29,10 +29,4 @@ namespace Interact
 		public string Motto = null;
 		public int Photo = 0;  //新头像大小
 	}
-
-	//获取用户头像请求的包头
-	internal class JsonGetUserPhotoHead : BaseHead
-	{
-		public string User;	//要获取头像的用户名
-	}
 }

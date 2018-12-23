@@ -37,7 +37,7 @@ namespace Interact
 		public BaseHead Head;   //包头
 		public byte[] Data;     //包内容
 		public Action<ResultHead> CallBack; //数据发送完成的回调函数。注意，此时仅保证数据已发送，
-										  //服务器可能并没有处理完成请求
+											//服务器可能并没有处理完成请求
 	}
 	//允许请求的操作列表。具体定义见设计文档
 	public static class Operations
