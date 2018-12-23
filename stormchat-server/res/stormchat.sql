@@ -6,7 +6,7 @@ CREATE TABLE `message` (
   `To` varchar(12) NOT NULL,
   `Msg` text,
   PRIMARY KEY (`Id`)
-) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8;
 
 LOCK TABLES `message` WRITE;
 UNLOCK TABLES;
@@ -20,9 +20,9 @@ CREATE TABLE `user` (
   `UGroup` enum('User','Vip','Admin','Group') DEFAULT 'User',
   `Photo` mediumtext,
   PRIMARY KEY (`User`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8;
 
 LOCK TABLES `user` WRITE;
-INSERT INTO `user` VALUES ('mattuy','mattuy','Mattuy','','Admin',NULL);
+INSERT INTO `user` VALUES ('test','test','Test','This is my Motto.','Admin',NULL);
 UNLOCK TABLES;
 

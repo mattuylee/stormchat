@@ -1,0 +1,1282 @@
+<svg version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink" width="990" height="3443">
+    <defs/>
+    <g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="18px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="71">Operation说明</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="24" y="544" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 24 544 L 232 544 L 232 584 L 24 584 L 24 544 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="544" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 544 L 640 544 L 640 640 L 240 640 L 240 544 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="648" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 648 L 640 648 L 640 744 L 240 744 L 240 648 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="570">【SERVER】TransMessage</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 544 L 621 544 L 631 554 L 631 567 L 240 567 L 240 544"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 544 L 621 544 L 631 554 L 631 567 L 240 567 L 240 544 L 240 544" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 544 L 621 554 L 631 554 L 621 544" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="562">When，消息产生时间；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 568 L 621 568 L 631 578 L 631 591 L 240 591 L 240 568"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 568 L 621 568 L 631 578 L 631 591 L 240 591 L 240 568 L 240 568" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 568 L 621 578 L 631 578 L 621 568" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="586">From，消息发送者ID；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="544" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 544 L 984 544 L 984 640 L 640 640 L 640 544 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="648" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 648 L 984 648 L 984 744 L 640 744 L 640 648 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="24" y="111" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 24 111 L 232 111 L 232 151 L 24 151 L 24 111 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="15px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="140">【发送方】操作名称</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="111" width="400" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 111 L 640 111 L 640 151 L 240 151 L 240 111 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="15px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="140">Head域      请求参数列表</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="111" width="344" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 111 L 984 111 L 984 151 L 640 151 L 640 111 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="15px" font-style="normal" font-weight="normal" text-decoration="none" x="649" y="139">Data域，请求数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="175" width="400" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 175 L 640 175 L 640 215 L 240 215 L 240 175 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="15px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="204">Head域      反馈参数列表</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="175" width="344" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 175 L 984 175 L 984 215 L 640 215 L 640 175 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="15px" font-style="normal" font-weight="normal" text-decoration="none" x="649" y="203">Data域，反馈数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 544 L 965 544 L 975 554 L 975 567 L 640 567 L 640 544"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 544 L 965 544 L 975 554 L 975 567 L 640 567 L 640 544 L 640 544" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 544 L 965 554 L 975 554 L 965 544" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="562">消息内容数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="783" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 783 L 640 783 L 640 879 L 240 879 L 240 783 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="887" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 887 L 640 887 L 640 983 L 240 983 L 240 887 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="783" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 783 L 984 783 L 984 879 L 640 879 L 640 783 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="887" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 887 L 984 887 L 984 983 L 640 983 L 640 887 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="24" y="783" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 24 783 L 232 783 L 232 823 L 24 823 L 24 783 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="809">【CLIENT】SendMessage</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 784 L 621 784 L 631 794 L 631 807 L 240 807 L 240 784"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 784 L 621 784 L 631 794 L 631 807 L 240 807 L 240 784 L 240 784" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 784 L 621 794 L 631 794 L 621 784" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="802">To，消息接收者ID；若省略则发送到上一接收对象</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 784 L 965 784 L 975 794 L 975 807 L 640 807 L 640 784"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 784 L 965 784 L 975 794 L 975 807 L 640 807 L 640 784 L 640 784" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 784 L 965 794 L 975 794 L 965 784" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="802">消息内容数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="106">请求数据：</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="170">反馈数据：</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="1343" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 1343 L 640 1343 L 640 1439 L 240 1439 L 240 1343 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="1447" width="400" height="105"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 1447 L 640 1447 L 640 1552 L 240 1552 L 240 1447 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="1343" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 1343 L 984 1343 L 984 1439 L 640 1439 L 640 1343 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="1447" width="344" height="105"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 1447 L 984 1447 L 984 1552 L 640 1552 L 640 1447 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="24" y="1343" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 24 1343 L 232 1343 L 232 1383 L 24 1383 L 24 1343 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="1369">【CLIENT】Login</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 1344 L 621 1344 L 631 1354 L 631 1367 L 240 1367 L 240 1344"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 1344 L 621 1344 L 631 1354 L 631 1367 L 240 1367 L 240 1344 L 240 1344" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 1344 L 621 1354 L 631 1354 L 621 1344" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="1362">User，用户名；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 1368 L 621 1368 L 631 1378 L 631 1391 L 240 1391 L 240 1368"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 1368 L 621 1368 L 631 1378 L 631 1391 L 240 1391 L 240 1368 L 240 1368" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 1368 L 621 1378 L 631 1378 L 621 1368" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="1386">Pwd，密码；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 1448 L 621 1448 L 631 1458 L 631 1471 L 240 1471 L 240 1448"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 1448 L 621 1448 L 631 1458 L 631 1471 L 240 1471 L 240 1448 L 240 1448" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 1448 L 621 1458 L 631 1458 L 621 1448" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="1466">Error，错误文本，登陆成功为空；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="2095" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 2095 L 640 2095 L 640 2191 L 240 2191 L 240 2095 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="2200" width="400" height="168"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 2200 L 640 2200 L 640 2368 L 240 2368 L 240 2200 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="2095" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 2095 L 984 2095 L 984 2191 L 640 2191 L 640 2095 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="2199" width="344" height="169"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 2199 L 984 2199 L 984 2368 L 640 2368 L 640 2199 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="24" y="2095" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 24 2095 L 232 2095 L 232 2135 L 24 2135 L 24 2095 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="2121">【CLIENT】GetUserList</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 2224 L 621 2224 L 631 2234 L 631 2247 L 240 2247 L 240 2224"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 2224 L 621 2224 L 631 2234 L 631 2247 L 240 2247 L 240 2224 L 240 2224" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 2224 L 621 2234 L 631 2234 L 621 2224" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="2242">Error，错误文本，成功为空；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 2200 L 621 2200 L 631 2210 L 631 2223 L 240 2223 L 240 2200"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 2200 L 621 2200 L 631 2210 L 631 2223 L 240 2223 L 240 2200 L 240 2200" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 2200 L 621 2210 L 631 2210 L 621 2200" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="2218">Count，获取到的用户个数；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 2224 L 965 2224 L 975 2234 L 975 2247 L 640 2247 L 640 2224"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 2224 L 965 2224 L 975 2234 L 975 2247 L 640 2247 L 640 2224 L 640 2224" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 2224 L 965 2234 L 975 2234 L 965 2224" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="2242">User，用户名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 2248 L 965 2248 L 975 2258 L 975 2271 L 640 2271 L 640 2248"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 2248 L 965 2248 L 975 2258 L 975 2271 L 640 2271 L 640 2248 L 640 2248" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 2248 L 965 2258 L 975 2258 L 965 2248" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="2266">NickName，昵称</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 2200 L 965 2200 L 975 2210 L 975 2223 L 640 2223 L 640 2200"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 2200 L 965 2200 L 975 2210 L 975 2223 L 640 2223 L 640 2200 L 640 2200" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 2200 L 965 2210 L 975 2210 L 965 2200" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="2218">0...*</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 2272 L 965 2272 L 975 2282 L 975 2295 L 640 2295 L 640 2272"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 2272 L 965 2272 L 975 2282 L 975 2295 L 640 2295 L 640 2272 L 640 2272" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 2272 L 965 2282 L 975 2282 L 965 2272" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="2290">Motto，签名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 2296 L 965 2296 L 975 2306 L 975 2319 L 640 2319 L 640 2296"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 2296 L 965 2296 L 975 2306 L 975 2319 L 640 2319 L 640 2296 L 640 2296" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 2296 L 965 2306 L 975 2306 L 965 2296" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="2314">UGroup，用户组</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="14px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="243">注：有结构的数据皆为json编码数据，[]为可选数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="24" y="303" width="208" height="41"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 24 303 L 232 303 L 232 344 L 24 344 L 24 303 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="303" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 303 L 640 303 L 640 399 L 240 399 L 240 303 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="240" y="407" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 407 L 640 407 L 640 503 L 240 503 L 240 407 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="33" y="329">【SERVER】Panic</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 303 L 621 303 L 631 313 L 631 326 L 240 326 L 240 303"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 303 L 621 303 L 631 313 L 631 326 L 240 326 L 240 303 L 240 303" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 303 L 621 313 L 631 313 L 621 303" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="321">Job，正在执行的操作</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 327 L 621 327 L 631 337 L 631 350 L 240 350 L 240 327"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 327 L 621 327 L 631 337 L 631 350 L 240 350 L 240 327 L 240 327" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 327 L 621 337 L 631 337 L 621 327" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="345">Error，错误原因</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="303" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 303 L 984 303 L 984 399 L 640 399 L 640 303 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="640" y="407" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 407 L 984 407 L 984 503 L 640 503 L 640 407 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="244" y="3271" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 3271 L 644 3271 L 644 3367 L 244 3367 L 244 3271 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="244" y="3375" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 3375 L 644 3375 L 644 3471 L 244 3471 L 244 3375 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="644" y="3271" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 644 3271 L 988 3271 L 988 3367 L 644 3367 L 644 3271 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="644" y="3375" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 644 3375 L 988 3375 L 988 3471 L 644 3471 L 644 3375 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="28" y="3271" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 28 3271 L 236 3271 L 236 3311 L 28 3311 L 28 3271 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="33" y="3297">【CLIENT】Ping</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="241" y="1849" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 241 1849 L 641 1849 L 641 1945 L 241 1945 L 241 1849 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="241" y="1953" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 241 1953 L 641 1953 L 641 2049 L 241 2049 L 241 1953 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="641" y="1849" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 641 1849 L 985 1849 L 985 1945 L 641 1945 L 641 1849 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="641" y="1953" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 641 1953 L 985 1953 L 985 2049 L 641 2049 L 641 1953 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="25" y="1849" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 25 1849 L 233 1849 L 233 1889 L 25 1889 L 25 1849 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="241" y="1598" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 241 1598 L 641 1598 L 641 1694 L 241 1694 L 241 1598 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="241" y="1702" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 241 1702 L 641 1702 L 641 1798 L 241 1798 L 241 1702 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="641" y="1598" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 641 1598 L 985 1598 L 985 1694 L 641 1694 L 641 1598 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="641" y="1702" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 641 1702 L 985 1702 L 985 1798 L 641 1798 L 641 1702 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="25" y="1598" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 25 1598 L 233 1598 L 233 1638 L 25 1638 L 25 1598 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="30" y="1874">【SERVER】Offline</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 241 1848 L 622 1848 L 632 1858 L 632 1871 L 241 1871 L 241 1848"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 241 1848 L 622 1848 L 632 1858 L 632 1871 L 241 1871 L 241 1848 L 241 1848" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 622 1848 L 622 1858 L 632 1858 L 622 1848" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="246" y="1866">Error，勒令下线原因</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="1626">【Client】Logout</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 1872 L 621 1872 L 631 1882 L 631 1895 L 240 1895 L 240 1872"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 1872 L 621 1872 L 631 1882 L 631 1895 L 240 1895 L 240 1872 L 240 1872" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 1872 L 621 1882 L 631 1882 L 621 1872" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="1890">Addr，新客户端的地址（如果有）</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 888 L 621 888 L 631 898 L 631 911 L 240 911 L 240 888"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 888 L 621 888 L 631 898 L 631 911 L 240 911 L 240 888 L 240 888" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 888 L 621 898 L 631 898 L 621 888" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="906">[Error]，当NeedResult存在时返回错误内容，成功为空</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="244" y="2439" width="400" height="104"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 2439 L 644 2439 L 644 2543 L 244 2543 L 244 2439 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="244" y="2560" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 2560 L 644 2560 L 644 2656 L 244 2656 L 244 2560 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="644" y="2439" width="344" height="104"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 644 2439 L 988 2439 L 988 2543 L 644 2543 L 644 2439 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="644" y="2560" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 644 2560 L 988 2560 L 988 2656 L 644 2656 L 644 2560 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="28" y="2440" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 28 2440 L 236 2440 L 236 2480 L 28 2480 L 28 2440 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="33" y="2465">【Client】UpdateUserInfo</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 244 2439 L 625 2439 L 635 2449 L 635 2462 L 244 2462 L 244 2439"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 2439 L 625 2439 L 635 2449 L 635 2462 L 244 2462 L 244 2439 L 244 2439" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 625 2439 L 625 2449 L 635 2449 L 625 2439" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="249" y="2457">[NickName]，新昵称</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 244 2560 L 625 2560 L 635 2570 L 635 2583 L 244 2583 L 244 2560"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 2560 L 625 2560 L 635 2570 L 635 2583 L 244 2583 L 244 2560 L 244 2560" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 625 2560 L 625 2570 L 635 2570 L 625 2560" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="249" y="2578">Error，执行结果，为空则修改成功</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 244 2464 L 625 2464 L 635 2474 L 635 2487 L 244 2487 L 244 2464"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 2464 L 625 2464 L 635 2474 L 635 2487 L 244 2487 L 244 2464 L 244 2464" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 625 2464 L 625 2474 L 635 2474 L 625 2464" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="249" y="2482">[Password]，新密码</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 244 2488 L 625 2488 L 635 2498 L 635 2511 L 244 2511 L 244 2488"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 2488 L 625 2488 L 635 2498 L 635 2511 L 244 2511 L 244 2488 L 244 2488" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 625 2488 L 625 2498 L 635 2498 L 625 2488" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="249" y="2506">[Motto]，新签名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 244 2512 L 625 2512 L 635 2522 L 635 2535 L 244 2535 L 244 2512"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 244 2512 L 625 2512 L 635 2522 L 635 2535 L 244 2535 L 244 2512 L 244 2512" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 625 2512 L 625 2522 L 635 2522 L 625 2512" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="249" y="2530">Photo，头像数据长度</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 644 2439 L 965 2439 L 975 2449 L 975 2462 L 644 2462 L 644 2439"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 644 2439 L 965 2439 L 975 2449 L 975 2462 L 644 2462 L 644 2439 L 644 2439" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 2439 L 965 2449 L 975 2449 L 965 2439" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="649" y="2457">头像数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 808 L 621 808 L 631 818 L 631 831 L 240 831 L 240 808"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 808 L 621 808 L 631 818 L 631 831 L 240 831 L 240 808 L 240 808" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 808 L 621 818 L 631 818 L 621 808" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="826">NeedResullt，当此字段不为0时要求服务器返回处理结果</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 24 2136 L 133.50537109375 2136 L 143.50537109375 2146 L 143.50537109375 2159 L 24 2159 L 24 2136"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 24 2136 L 133.50537109375 2136 L 143.50537109375 2146 L 143.50537109375 2159 L 24 2159 L 24 2136 L 24 2136" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 133.50537109375 2136 L 133.50537109375 2146 L 143.50537109375 2146 L 133.50537109375 2136" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="29" y="2154">Deprecated</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="20" y="2743" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 20 2743 L 228 2743 L 228 2783 L 20 2783 L 20 2743 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="25" y="2768">【Client】GetUsers</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="246" y="2743" width="400" height="104"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 2743 L 646 2743 L 646 2847 L 246 2847 L 246 2743 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="246" y="2863" width="400" height="289"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 2863 L 646 2863 L 646 3152 L 246 3152 L 246 2863 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="646" y="2743" width="344" height="104"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 646 2743 L 990 2743 L 990 2847 L 646 2847 L 646 2743 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="646" y="2863" width="344" height="201"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 646 2863 L 990 2863 L 990 3064 L 646 3064 L 646 2863 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 2863 L 627 2863 L 637 2873 L 637 2886 L 246 2886 L 246 2863"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 2863 L 627 2863 L 637 2873 L 637 2886 L 246 2886 L 246 2863 L 246 2863" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 2863 L 627 2873 L 637 2873 L 627 2863" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="2881">Error，错误文本，如果非空其他数据将不存在</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 1451 L 965 1451 L 975 1461 L 975 1474 L 640 1474 L 640 1451"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 1451 L 965 1451 L 975 1461 L 975 1474 L 640 1474 L 640 1451 L 640 1451" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 1451 L 965 1461 L 975 1461 L 965 1451" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="1469">User，用户名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 1475 L 965 1475 L 975 1485 L 975 1498 L 640 1498 L 640 1475"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 1475 L 965 1475 L 975 1485 L 975 1498 L 640 1498 L 640 1475 L 640 1475" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 1475 L 965 1485 L 975 1485 L 965 1475" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="1493">NickName，昵称</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 1499 L 965 1499 L 975 1509 L 975 1522 L 640 1522 L 640 1499"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 1499 L 965 1499 L 975 1509 L 975 1522 L 640 1522 L 640 1499 L 640 1499" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 1499 L 965 1509 L 975 1509 L 965 1499" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="1517">Motto，签名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 1523 L 965 1523 L 975 1533 L 975 1546 L 640 1546 L 640 1523"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 1523 L 965 1523 L 975 1533 L 975 1546 L 640 1546 L 640 1523 L 640 1523" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 1523 L 965 1533 L 975 1533 L 965 1523" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="1541">UGroup，用户组</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 238 2743 L 619 2743 L 629 2753 L 629 2766 L 238 2766 L 238 2743"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 238 2743 L 619 2743 L 629 2753 L 629 2766 L 238 2766 L 238 2743 L 238 2743" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 619 2743 L 619 2753 L 629 2753 L 619 2743" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="243" y="2761">[User]，用户名，如果指定了此参数，则仅返回对应用户的信息</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="242" y="1015" width="400" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1015 L 642 1015 L 642 1111 L 242 1111 L 242 1015 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="242" y="1119" width="400" height="161"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1119 L 642 1119 L 642 1280 L 242 1280 L 242 1119 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="642" y="1015" width="344" height="96"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 642 1015 L 986 1015 L 986 1111 L 642 1111 L 642 1015 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="642" y="1119" width="344" height="161"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 642 1119 L 986 1119 L 986 1280 L 642 1280 L 642 1119 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <rect fill="#ffffff" stroke="none" x="26" y="1015" width="208" height="40"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 26 1015 L 234 1015 L 234 1055 L 26 1055 L 26 1015 Z Z" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="31" y="1041">【CLIENT】Login2</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 242 1016 L 623 1016 L 633 1026 L 633 1039 L 242 1039 L 242 1016"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1016 L 623 1016 L 633 1026 L 633 1039 L 242 1039 L 242 1016 L 242 1016" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 623 1016 L 623 1026 L 633 1026 L 623 1016" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="247" y="1034">User，用户名；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 242 1040 L 623 1040 L 633 1050 L 633 1063 L 242 1063 L 242 1040"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1040 L 623 1040 L 633 1050 L 633 1063 L 242 1063 L 242 1040 L 242 1040" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 623 1040 L 623 1050 L 633 1050 L 623 1040" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="247" y="1058">Pwd，密码；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 242 1119 L 623 1119 L 633 1129 L 633 1142 L 242 1142 L 242 1119"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1119 L 623 1119 L 633 1129 L 633 1142 L 242 1142 L 242 1119 L 242 1119" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 623 1119 L 623 1129 L 633 1129 L 623 1119" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="247" y="1137">Error，错误文本，登陆成功为空；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 242 1147 L 623 1147 L 633 1157 L 633 1170 L 242 1170 L 242 1147"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1147 L 623 1147 L 633 1157 L 633 1170 L 242 1170 L 242 1147 L 242 1147" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 623 1147 L 623 1157 L 633 1157 L 623 1147" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="247" y="1165">User，用户名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 242 1171 L 623 1171 L 633 1181 L 633 1194 L 242 1194 L 242 1171"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1171 L 623 1171 L 633 1181 L 633 1194 L 242 1194 L 242 1171 L 242 1171" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 623 1171 L 623 1181 L 633 1181 L 623 1171" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="247" y="1189">NickName，昵称</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 242 1195 L 623 1195 L 633 1205 L 633 1218 L 242 1218 L 242 1195"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1195 L 623 1195 L 633 1205 L 633 1218 L 242 1218 L 242 1195 L 242 1195" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 623 1195 L 623 1205 L 633 1205 L 623 1195" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="247" y="1213">Motto，签名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 242 1219 L 623 1219 L 633 1229 L 633 1242 L 242 1242 L 242 1219"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 242 1219 L 623 1219 L 633 1229 L 633 1242 L 242 1242 L 242 1219 L 242 1219" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 623 1219 L 623 1229 L 633 1229 L 623 1219" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="247" y="1237">UGroup，用户组</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 240 1240 L 621 1240 L 631 1250 L 631 1263 L 240 1263 L 240 1240"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 240 1240 L 621 1240 L 631 1250 L 631 1263 L 240 1263 L 240 1240 L 240 1240" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 621 1240 L 621 1250 L 631 1250 L 621 1240" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="245" y="1258">Photo，头像数据长度</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 640 1120 L 965 1120 L 975 1130 L 975 1143 L 640 1143 L 640 1120"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 640 1120 L 965 1120 L 975 1130 L 975 1143 L 640 1143 L 640 1120 L 640 1120" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 965 1120 L 965 1130 L 975 1130 L 965 1120" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="645" y="1138">头像数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 2887 L 627 2887 L 637 2897 L 637 2910 L 246 2910 L 246 2887"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 2887 L 627 2887 L 637 2897 L 637 2910 L 246 2910 L 246 2887 L 246 2887" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 2887 L 627 2897 L 637 2897 L 627 2887" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="2905">Total，总用户数</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 2912 L 627 2912 L 637 2922 L 637 2935 L 246 2935 L 246 2912"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 2912 L 627 2912 L 637 2922 L 637 2935 L 246 2935 L 246 2912 L 246 2912" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 2912 L 627 2922 L 637 2922 L 627 2912" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="2930">Count，当前数据序号</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 3080 L 627 3080 L 637 3090 L 637 3103 L 246 3103 L 246 3080"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 3080 L 627 3080 L 637 3090 L 637 3103 L 246 3103 L 246 3080 L 246 3080" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 3080 L 627 3090 L 637 3090 L 627 3080" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="3098">Photo，头像数据长度</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 3057 L 627 3057 L 637 3067 L 637 3080 L 246 3080 L 246 3057"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 3057 L 627 3057 L 637 3067 L 637 3080 L 246 3080 L 246 3057 L 246 3057" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 3057 L 627 3067 L 637 3067 L 627 3057" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="3075">UGroup，用户组</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 3033 L 627 3033 L 637 3043 L 637 3056 L 246 3056 L 246 3033"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 3033 L 627 3033 L 637 3043 L 637 3056 L 246 3056 L 246 3033 L 246 3033" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 3033 L 627 3043 L 637 3043 L 627 3033" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="3051">Motto，签名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 3009 L 627 3009 L 637 3019 L 637 3032 L 246 3032 L 246 3009"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 3009 L 627 3009 L 637 3019 L 637 3032 L 246 3032 L 246 3009 L 246 3009" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 3009 L 627 3019 L 637 3019 L 627 3009" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="3027">NickName，昵称</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 246 2985 L 627 2985 L 637 2995 L 637 3008 L 246 3008 L 246 2985"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 246 2985 L 627 2985 L 637 2995 L 637 3008 L 246 3008 L 246 2985 L 246 2985" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 2985 L 627 2995 L 637 2995 L 627 2985" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="251" y="3003">User，用户名</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 648 2864 L 969 2864 L 979 2874 L 979 2887 L 648 2887 L 648 2864"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 648 2864 L 969 2864 L 979 2874 L 979 2887 L 648 2887 L 648 2864 L 648 2864" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 969 2864 L 969 2874 L 979 2874 L 969 2864" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="653" y="2882">头像数据</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 265.080078125 2936 L 627 2936 L 637 2946 L 637 2959 L 265.080078125 2959 L 265.080078125 2936"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 265.080078125 2936 L 627 2936 L 637 2946 L 637 2959 L 265.080078125 2959 L 265.080078125 2936 L 265.080078125 2936" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 2936 L 627 2946 L 637 2946 L 627 2936" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="270.080078125" y="2954">从1开始递增；</text>
+            </g>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="#ffffff" stroke="none" d="M 265.080078125 2960 L 627 2960 L 637 2970 L 637 2983 L 265.080078125 2983 L 265.080078125 2960"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 265.080078125 2960 L 627 2960 L 637 2970 L 637 2983 L 265.080078125 2983 L 265.080078125 2960 L 265.080078125 2960" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <path fill="none" stroke="#000000" d="M 627 2960 L 627 2970 L 637 2970 L 627 2960" stroke-miterlimit="10"/>
+        </g>
+        <g transform="translate(-10,-38) scale(1,1)">
+            <g>
+                <path fill="none" stroke="none"/>
+                <text fill="#000000" stroke="none" font-family="Arial" font-size="13px" font-style="normal" font-weight="normal" text-decoration="none" x="270.080078125" y="2978">最后一个包值为-1，仅作结束封包而不包含数据；</text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -12,14 +12,6 @@ const (
 	server_addr string = "localhost:3727"
 )
 
-//用户组
-const (
-	ugroup_user  string = "User"  //普通用户
-	ugroup_vip   string = "Vip"   //会员
-	ugroup_admin string = "Admin" //管理员
-	ugroup_group string = "Group" //群聊
-)
-
 //消息头的通用字段名称
 const (
 	keyname_operation string = "Operation" //操作名

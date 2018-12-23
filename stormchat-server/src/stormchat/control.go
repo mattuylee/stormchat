@@ -14,35 +14,6 @@ const (
 	timeout_message = 100 * 365 * 24 * 60 * 60
 )
 
-//用户组
-const (
-	ugroup_user  string = "User"  //普通用户
-	ugroup_vip   string = "Vip"   //会员
-	ugroup_admin string = "Admin" //管理员
-	ugroup_group string = "Group" //群聊
-)
-
-//消息头的通用字段名称
-const (
-	keyname_operation string = "Operation" //操作名
-	keyname_token     string = "Token"
-)
-
-//控制消息。详见设计文档
-const (
-	operation_panic           string = "Panic"
-	operation_trans_message   string = "TransMessage"
-	operation_send_message    string = "SendMessage"
-	operation_ping            string = "Ping"
-	operation_login           string = "Login2"
-	operation_login_old1      string = "Login"
-	operation_logout          string = "Logout"
-	operation_offline         string = "Offline"
-	operation_get_user_list   string = "GetUserList"
-	operation_update_userinfo string = "UpdateUserInfo"
-	operation_get_users       string = "GetUsers"
-)
-
 //字符串常量
 const (
 	//日志文件。交互模式时无效（输出到os.Stdout）

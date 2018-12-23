@@ -5,6 +5,27 @@ import (
 	"time"
 )
 
+//控制消息。详见设计文档
+const (
+	operation_panic           string = "Panic"
+	operation_trans_message   string = "TransMessage"
+	operation_send_message    string = "SendMessage"
+	operation_ping            string = "Ping"
+	operation_login           string = "Login2"
+	operation_login_old1      string = "Login"
+	operation_logout          string = "Logout"
+	operation_offline         string = "Offline"
+	operation_get_user_list   string = "GetUserList"
+	operation_update_userinfo string = "UpdateUserInfo"
+	operation_get_users       string = "GetUsers"
+)
+
+//消息头的通用字段名称
+const (
+	keyname_operation string = "Operation" //操作名
+	keyname_token     string = "Token"
+)
+
 //消息结构
 type Message struct {
 	When time.Time //接收时间
