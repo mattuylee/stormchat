@@ -218,7 +218,7 @@ stormchat
 │  .gitattributes
 │  .gitignore
 │  LICENSE          //许可证
-│  READEME.md       //此帮助文件
+│  README.md       //此帮助文件
 │  
 ├─design            //设计文件
 │    message.png
