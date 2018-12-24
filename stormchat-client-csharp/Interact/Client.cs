@@ -222,11 +222,9 @@ namespace Interact
 			//将头像数据转换到字符数组
 			if (userInfo.Photo != null)
 			{
-				MemoryStream memStream = new MemoryStream();
-				userInfo.Photo.Save(memStream, userInfo.Photo.RawFormat);
-				photoData = new byte[memStream.Length];
-				memStream.Seek(0, SeekOrigin.Begin);
-				memStream.Read(photoData, 0, photoData.Length);
+				photoData = new byte[userInfo.Photo.Length];
+				userInfo.Photo.Seek(0, SeekOrigin.Begin);
+				userInfo.Photo.Read(photoData, 0, photoData.Length);
 			}
 			//构建数据包
 			JsonUserInfoHead jsonObj = new JsonUserInfoHead()

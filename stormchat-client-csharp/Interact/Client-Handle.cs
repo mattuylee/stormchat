@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Drawing;
 using System.IO;
 
 //StormClient对数据的处理相关内容
@@ -100,8 +99,7 @@ namespace Interact
 			};
 			if (int.Parse(head[AttrNames.Photo].ToString()) > 0)
 			{
-				MemoryStream ms = new MemoryStream(data);
-				user.Photo = Image.FromStream(ms);
+				user.Photo = new MemoryStream(data);
 			} //用户头像数据
 			OnLoginDone?.Invoke(resultHead, user);
 		}
@@ -171,8 +169,7 @@ namespace Interact
 			}; //基础数据
 			if (int.Parse(head[AttrNames.Photo].ToString()) > 0)
 			{
-				MemoryStream ms = new MemoryStream(data);
-				user.Photo = Image.FromStream(ms);
+				user.Photo = new MemoryStream(data);
 			} //头像数据
 			//加入临时用户列表缓存
 			User[] users;
