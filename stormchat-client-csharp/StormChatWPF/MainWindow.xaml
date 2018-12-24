@@ -27,5 +27,6 @@
 				<StackPanel x:Name="OutBox" Margin="0,0,0,0" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
 			</ScrollViewer.Content>
 		</ScrollViewer>
+		<Button x:Name="button" Content="Button" Grid.Column="2" HorizontalAlignment="Left" Margin="73,31,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
 	</Grid>
 </Window>

@@ -1,0 +1,19 @@
+﻿<Window x:Class="StormChatWPF.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StormChatWPF"
+        mc:Ignorable="d"
+        Title="Window1" Height="300" Width="300">
+	<Grid>
+		<Label x:Name="label" HorizontalAlignment="Left" Margin="76,101,0,0" VerticalAlignment="Top" Width="86" Height="41">
+			<Image x:Name="image" Height="31" Width="36" Source="UI/Resources/闪电.png" Margin="0,0,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.553,0.5" VerticalAlignment="Center">
+				<Image.OpacityMask>
+					<ImageBrush ImageSource="UI/Resources/聊天气泡.png"/>
+				</Image.OpacityMask>
+			</Image>
+		</Label>
+
+	</Grid>
+</Window>

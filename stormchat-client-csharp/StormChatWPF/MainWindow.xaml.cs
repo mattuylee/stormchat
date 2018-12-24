@@ -1,17 +1,8 @@
 ﻿using Interact;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace StormChatWPF
 {
@@ -65,7 +56,7 @@ namespace StormChatWPF
             if (message.To == User.Me)
             {
                 App.Current.Dispatcher.Invoke(
-                delegate ()
+                (Action)delegate()
                 {
                     OutBox.Children.Add(new ChatBubble(message,HorizontalAlignment.Left));
                 });
@@ -73,11 +64,20 @@ namespace StormChatWPF
             else
             {
                 App.Current.Dispatcher.Invoke(
-                delegate ()
+                    (Action)delegate()
                 {
-                    OutBox.Children.Add(new ChatBubble(message,HorizontalAlignment.Right));
+                    OutBox.Children.Add(new ChatBubble(message, HorizontalAlignment.Right));
                 });
             }//发送的的消息
         }//将消息展现于UI界面
+
+        private void button_Click_1(object sender, RoutedEventArgs e)
+        {
+            App.Current.Dispatcher.Invoke(
+                (Action)delegate ()
+                {
+                    OutBox.Children.Add(new HeadPicture());
+                });
+        }
     }
 }
