@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Interact;
 using System.Drawing;
 using System.Windows;
+using System.IO;
 
 namespace StormChatWPF
 {
@@ -17,7 +18,8 @@ namespace StormChatWPF
         {
             StormClient.OnLoginDone += OnHaveLogin;
             StormClient.OnGetUserListDone += OnGetContactsList;
-            StormClient.OnMessage +=OnMessage;
+            StormClient.OnMessage +=OnMessage;//事件挂接
+            User.DefaultPhoto = new MemoryStream(File.ReadAllBytes(@"../../UI/Resources/默认头像.png"));
         }
         internal static User CurrentContact { get; set; }//设置当前联系人对象
         /// <summary>
@@ -38,7 +40,7 @@ namespace StormChatWPF
                     mainWindow.Show();
                     LogWindow.Instence.Close();
                 });
-        }
+        }//获取联系人列表完成
         private  void OnHaveLogin(ResultHead head, User user)
         {
                     if (head.Error == "")
@@ -48,6 +50,11 @@ namespace StormChatWPF
                     }
                     else
                     {
+                App.Current.Dispatcher.Invoke(
+                    (Action)delegate ()
+                    {
+                        LogWindow.Instence.Login_button.IsEnabled = true;
+                    });
                         MessageBox.Show("请核对账号密码！");
                     }
         }//登录完成
@@ -74,11 +81,21 @@ namespace StormChatWPF
             {
                 if (!StormClient.QueueLogin(user, password))
                 {
+                    App.Current.Dispatcher.Invoke(
+                    (Action)delegate ()
+                    {
+                        LogWindow.Instence.Login_button.IsEnabled = true;
+                    }); 
                     MessageBox.Show("登录失败");
                 }
             }
             else
             {
+                App.Current.Dispatcher.Invoke(
+                    (Action)delegate ()
+                    {
+                        LogWindow.Instence.Login_button.IsEnabled = true;
+                    });
                 MessageBox.Show("连接服务器失败！");
             }
         }//登录

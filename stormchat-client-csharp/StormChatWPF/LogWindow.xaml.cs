@@ -29,9 +29,8 @@ namespace StormChatWPF
         }
         private void Login_button_Click(object sender, RoutedEventArgs e)
         {
+            Login_button.IsEnabled = false;
             Chat.Log(AccountBox.Text,passwordBox.Password);
         }
-       
-
     }
 }

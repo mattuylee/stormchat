@@ -1,4 +1,5 @@
 ﻿using Interact;
+using StormChatWPF.UI;
 using System;
 using System.Linq;
 using System.Windows;
@@ -58,7 +59,7 @@ namespace StormChatWPF
                 App.Current.Dispatcher.Invoke(
                 (Action)delegate()
                 {
-                    OutBox.Children.Add(new ChatBubble(message,HorizontalAlignment.Left));
+                    OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message,HorizontalAlignment.Left));
                 });
             }//接受到的的消息
             else
@@ -66,7 +67,7 @@ namespace StormChatWPF
                 App.Current.Dispatcher.Invoke(
                     (Action)delegate()
                 {
-                    OutBox.Children.Add(new ChatBubble(message, HorizontalAlignment.Right));
+                    OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message, HorizontalAlignment.Right));
                 });
             }//发送的的消息
         }//将消息展现于UI界面
@@ -76,7 +77,6 @@ namespace StormChatWPF
             App.Current.Dispatcher.Invoke(
                 (Action)delegate ()
                 {
-                    OutBox.Children.Add(new HeadPicture());
                 });
         }
     }

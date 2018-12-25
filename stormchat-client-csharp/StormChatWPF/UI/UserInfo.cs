@@ -1,30 +1,20 @@
 ﻿using Interact;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows;
+using System.Windows.Media.Imaging;
+using System.IO;
 
-namespace StormChatWPF
+namespace StormChatWPF.UI
 {
-    class UserInfo:Label
+    internal class UserInfo : Contacts
     {
         public UserInfo(User user)
-            {
-                
-                
-            }
-        private Image headpicture = new Image
         {
-            HorizontalAlignment = HorizontalAlignment.Left
-        };
-        private TextBlock UserNmae=new TextBlock
-        {
-            FontFamily = new FontFamily("Comic Sans MS"),
-            HorizontalAlignment = HorizontalAlignment.Right,
-            VerticalAlignment=VerticalAlignment.Top
-        };
+            image.BeginInit();
+            image.StreamSource = user.Photo;
+            User.DefaultPhoto.Seek(0, SeekOrigin.Begin);
+            image.EndInit();
+            HeadPicture.Source = image;
+            text.Content = user.NickName;
+        }
+        BitmapImage image = new BitmapImage();
     }
 }

@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="StormChatWPF.UI.Contacts"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StormChatWPF.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="40" d:DesignWidth="120">
+    <Grid>
+		<WrapPanel HorizontalAlignment="Left" Height="40" VerticalAlignment="Stretch" Width="120">
+			<Image x:Name="HeadPicture" HorizontalAlignment="Left" Height="40"  Width="40"/>
+			<Label x:Name="text" Content="Label" Height="40" Width="80"/>
+		</WrapPanel>
+		
+
+	</Grid>
+</UserControl>

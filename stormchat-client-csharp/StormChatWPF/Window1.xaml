@@ -7,13 +7,11 @@
         mc:Ignorable="d"
         Title="Window1" Height="300" Width="300">
 	<Grid>
-		<Label x:Name="label" HorizontalAlignment="Left" Margin="76,101,0,0" VerticalAlignment="Top" Width="86" Height="41">
-			<Image x:Name="image" Height="31" Width="36" Source="UI/Resources/闪电.png" Margin="0,0,0,0" HorizontalAlignment="Left" RenderTransformOrigin="0.553,0.5" VerticalAlignment="Center">
-				<Image.OpacityMask>
-					<ImageBrush ImageSource="UI/Resources/聊天气泡.png"/>
-				</Image.OpacityMask>
-			</Image>
-		</Label>
+		<StackPanel HorizontalAlignment="Left" Margin="187,0,0,10.4" Width="100">
+			<Image x:Name="image" Height="46" Source="UI/Resources/聊天气泡.png" Margin="0,0,10,0"/>
+
+		</StackPanel>
+		<Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="90,108,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 
 	</Grid>
 </Window>
