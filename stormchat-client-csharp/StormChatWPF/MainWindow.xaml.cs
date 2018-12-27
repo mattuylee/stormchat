@@ -25,7 +25,13 @@ namespace StormChatWPF
             {
                 foreach (var user in Chat.ContactsList)
                 {
-                    UsersList.Items.Add(user.NickName);
+                    if (user.Name !=User.Me.Name)
+                    {
+                        UsersList.Items.Add(new UI.ContactsInfo(user)
+                        {
+                            HorizontalAlignment = HorizontalAlignment.Center
+                        });
+                    }
                 }
             }
         }//向联系人列表listview中添加元素
@@ -45,7 +51,7 @@ namespace StormChatWPF
                 MessageBox.Show("请选择联系人！");
                 return;
             }
-            if (InputBox.Text!="")
+            if (InputBox.Text != "")
             {
                 Chat.chat.SendMessage(InputBox.Text, Chat.CurrentContact);
                 InputBox.Text = "";
@@ -57,15 +63,15 @@ namespace StormChatWPF
             if (message.To == User.Me)
             {
                 App.Current.Dispatcher.Invoke(
-                (Action)delegate()
+                (Action)delegate ()
                 {
-                    OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message,HorizontalAlignment.Left));
+                    OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message, HorizontalAlignment.Left));
                 });
             }//接受到的的消息
             else
             {
                 App.Current.Dispatcher.Invoke(
-                    (Action)delegate()
+                    (Action)delegate ()
                 {
                     OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message, HorizontalAlignment.Right));
                 });

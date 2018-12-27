@@ -4,9 +4,9 @@ using System.IO;
 
 namespace StormChatWPF.UI
 {
-    internal class UserInfo : Contacts
+    internal class ContactsInfo : Contacts
     {
-        public UserInfo(User user)
+        public ContactsInfo(User user)
         {
             image.BeginInit();
             image.StreamSource = user.Photo;

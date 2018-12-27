@@ -69,7 +69,7 @@
     <Compile Include="UI\Contacts.xaml.cs">
       <DependentUpon>Contacts.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\UserInfo.cs" />
+    <Compile Include="UI\ContactsInfo.cs" />
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
