@@ -31,10 +31,10 @@ namespace StormChatWPF
         private void LoadUserMe()
         {
             BitmapImage image = new BitmapImage();
-            User_HeadPicture.BeginInit();
+            image.BeginInit();
             image.StreamSource = User.Me.Photo;
             User.Me.Photo.Seek(0, SeekOrigin.Begin);
-            User_HeadPicture.EndInit();
+            image.EndInit();
             User_HeadPicture.Source = image;
             User_NickNmae.Content = User.Me.NickName;
             User_motto.Content = User.Me.Motto;
