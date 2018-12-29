@@ -1,9 +1,11 @@
 ﻿using Interact;
 using StormChatWPF.UI;
 using System;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace StormChatWPF
 {
@@ -12,13 +14,32 @@ namespace StormChatWPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        delegate void LoadFinish(object sender,EventArgs e); 
         public static MainWindow Instence;
         public MainWindow()
         {
             InitializeComponent();
-            LoadContactsList();
             Instence = this;
+            MainWindowLoad += Window_Load;
+            MainWindowLoad.Invoke(this,null);
         }
+        void Window_Load(object sender, EventArgs e)
+        {
+            LoadContactsList();
+            LoadUserMe();
+        }
+        private void LoadUserMe()
+        {
+            BitmapImage image = new BitmapImage();
+            User_HeadPicture.BeginInit();
+            image.StreamSource = User.Me.Photo;
+            User.Me.Photo.Seek(0, SeekOrigin.Begin);
+            User_HeadPicture.EndInit();
+            User_HeadPicture.Source = image;
+            User_NickNmae.Content = User.Me.NickName;
+            User_motto.Content = User.Me.Motto;
+        }
+
         private void LoadContactsList()
         {
             if (Chat.ContactsList.Any())
@@ -85,5 +106,7 @@ namespace StormChatWPF
                 {
                 });
         }
+
+        event LoadFinish MainWindowLoad;
     }
 }

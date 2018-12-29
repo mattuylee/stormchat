@@ -44,7 +44,7 @@ namespace StormChatWPF
         private  void OnHaveLogin(ResultHead head, User user)
         {
                     if (head.Error == "")
-                    {
+                    {                                                                                                                  
                         User.Me = user;
                         StormClient.QueueGetUserList();                       
                     }

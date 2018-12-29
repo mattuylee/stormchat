@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:StormChatWPF"
+		xmlns:my="clr-namespace:StormChatWPF.UI"
         mc:Ignorable="d"
         Title="StormChat" Height="450" Width="800"
 		WindowStartupLocation="CenterScreen">
@@ -19,8 +20,7 @@
 			<ColumnDefinition Width="200*"/>
 			<ColumnDefinition Width="200*"/>
 		</Grid.ColumnDefinitions>
-		<ListView x:Name="UsersList" Margin="0,0,0,0" IsEnabled="True" SelectionChanged="UsersList_SelectionChanged" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="198">
-		</ListView>
+		<ListView x:Name="UsersList" Margin="0,0,0,0" IsEnabled="True" SelectionChanged="UsersList_SelectionChanged" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="198"/>
 		<TextBox x:Name="InputBox" Margin="200,0,0,0" TextWrapping="Wrap" Text="" Grid.Row="2" Grid.ColumnSpan="4" />
 		<Button Content="Send" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="75" Click="Button_Click" Height="20" Grid.Row="2" Grid.Column="3"/>
 		<ScrollViewer Grid.ColumnSpan="3" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" >
@@ -28,6 +28,8 @@
 				<StackPanel x:Name="OutBox" Margin="0,0,0,0" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
 			</ScrollViewer.Content>
 		</ScrollViewer>
-		<Button x:Name="button" Content="更改头像" Grid.Column="1" HorizontalAlignment="Left" Margin="0,64,0,-2" Grid.Row="2" VerticalAlignment="Top" Width="75" Click="button_Click_1"/>
+		<Image x:Name="User_HeadPicture" HorizontalAlignment="Left" Width="60" VerticalAlignment="Stretch"/>
+		<Label x:Name="User_NickNmae" Content="Label" Margin="0,0,0.4,0" Height="40" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="138"/>
+		<Label x:Name="User_motto" Content="人生很长，慢慢走。" Margin="0,40,0.4,0" VerticalContentAlignment="Top" HorizontalAlignment="Right" Width="138" FontSize="6"/>
 	</Grid>
 </Window>

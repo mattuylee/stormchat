@@ -22,6 +22,19 @@ namespace StormChatWPF.UI
         public Contacts()
         {
             InitializeComponent();
+            var metadata = new FrameworkPropertyMetadata((ImageSource)null);
+        }
+        
+        public Image Head
+        {
+            get
+            {
+                return this.HeadPicture;
+            }
+            set
+            {
+                this.HeadPicture = value;
+            }
         }
     }
 }
