@@ -14,6 +14,7 @@ namespace StormChatWPF.UI
             image.EndInit();
             HeadPicture.Source = image;
             text.Content = user.NickName;
+            Width = 120;
         }
         BitmapImage image = new BitmapImage();
     }

@@ -19,7 +19,7 @@ namespace StormChatWPF
             StormClient.OnLoginDone += OnHaveLogin;
             StormClient.OnGetUserListDone += OnGetContactsList;
             StormClient.OnMessage +=OnMessage;//事件挂接
-            User.DefaultPhoto = new MemoryStream(File.ReadAllBytes(@"../../UI/Resources/默认头像.png"));
+            User.DefaultPhoto = new MemoryStream(File.ReadAllBytes(@"../../UI/Resources/默认头像.png"));//设定默认头像
         }
         internal static User CurrentContact { get; set; }//设置当前联系人对象
         /// <summary>

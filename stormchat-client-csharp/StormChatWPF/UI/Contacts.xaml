@@ -5,13 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:StormChatWPF.UI"
              mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="120" HorizontalAlignment="Stretch">
+             d:DesignHeight="40" d:DesignWidth="120">
 	<Grid>
-		<WrapPanel Height="40" VerticalAlignment="Stretch">
-			<Image x:Name="HeadPicture" HorizontalAlignment="Left" Height="40"  Width="40"/>
-			<Label x:Name="text" Content="Label" Height="40" FontSize="14"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center"/>
-		</WrapPanel>
-
-
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="40*"/>
+			<ColumnDefinition Width="80*"/>
+		</Grid.ColumnDefinitions>
+		<Image x:Name="HeadPicture" HorizontalAlignment="Left" Height="40"  Width="40"/>
+		<Label x:Name="text" Content="Label" Height="40" FontSize="14"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Grid.Column="1" Width="80"/>
 	</Grid>
 </UserControl>
