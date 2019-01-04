@@ -23,7 +23,7 @@ namespace StormChatWPF.UI
             VerticalAlignment = VerticalAlignment.Bottom
         };
         /// <summary>
-        /// 
+        /// 生成聊天气泡
         /// </summary>
         /// <param name="msg">传入消息体</param>
         /// <param name="alignment">设置水平对齐方式，参数为HorizontalAlignment枚举类型</param>

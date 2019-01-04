@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Interact;
-using System.Drawing;
 using System.Windows;
 using System.IO;
 
@@ -21,7 +17,8 @@ namespace StormChatWPF
             StormClient.OnMessage +=OnMessage;//事件挂接
             User.DefaultPhoto = new MemoryStream(File.ReadAllBytes(@"../../UI/Resources/默认头像.png"));//设定默认头像
         }
-        internal static User CurrentContact { get; set; }//设置当前联系人对象
+        internal static User CurrentContact { get;
+            set; }//设置当前联系人对象
         /// <summary>
         /// 获取联系人列表(完成后打开主窗体)
         /// </summary>
