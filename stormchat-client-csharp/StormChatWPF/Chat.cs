@@ -62,7 +62,7 @@ namespace StormChatWPF
         {
             if (MainWindow.Instence != null)
             {
-                MainWindow.Instence.ShowMessage(message);
+                MainWindow.Instence.UI_ShowMessage(message);
             }
         }//接受到新消息
 
@@ -71,7 +71,7 @@ namespace StormChatWPF
             Message msg = new Message(text,target);
             Action<ResultHead> f = delegate (ResultHead head)
            {
-               MainWindow.Instence.ShowMessage(msg);
+               MainWindow.Instence.UI_ShowMessage(msg);
            };
             StormClient.QueueSendMessage(msg,f);
         }//发送消息

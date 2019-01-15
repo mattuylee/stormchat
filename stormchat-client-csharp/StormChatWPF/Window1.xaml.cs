@@ -26,11 +26,6 @@ namespace StormChatWPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            image.Source = new BitmapImage()
-            {
-                StreamSource = new FileStream(@"C:\Users\10568\Source\Repos\stormchat\stormchat-client-csharp\StormChatWPF\UI\Resources\闪电.png", FileMode.Open)
-
-            };
         }
     }
 }

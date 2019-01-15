@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Media.Imaging;
 
 namespace StormChatWPF
@@ -25,10 +26,10 @@ namespace StormChatWPF
         }
         void Window_Load(object sender, EventArgs e)
         {
-            LoadContactsList();
-            LoadUserMe();
+            UI_LoadContactsList();
+            UI_LoadUserMe();
         }
-        private void LoadUserMe()
+        private void UI_LoadUserMe()
         {
             BitmapImage image = new BitmapImage();
             image.BeginInit();
@@ -38,9 +39,32 @@ namespace StormChatWPF
             User_HeadPicture.Source = image;
             User_NickNmae.Content = User.Me.NickName;
             User_motto.Content = User.Me.Motto;
-        }
+        }//加载用当前用户UI显示信息
+        private void UI_LoadSettings()
+        {
 
-        private void LoadContactsList()
+        }
+        internal void UI_ShowMessage(Message message)
+        {
+            if (message.To == User.Me)
+            {
+                App.Current.Dispatcher.Invoke(
+                (Action)delegate ()
+                {
+                    OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message, HorizontalAlignment.Left));
+                });
+            }//接受到的的消息
+            else
+            {
+                App.Current.Dispatcher.Invoke(
+                    (Action)delegate ()
+                    {
+                        OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message, HorizontalAlignment.Right));
+                    });
+            }//发送的的消息
+        }//将消息展现于UI界面
+
+        private void UI_LoadContactsList()
         {
             if (Chat.ContactsList.Any())
             {
@@ -79,25 +103,7 @@ namespace StormChatWPF
             }
         }
 
-        internal void ShowMessage(Message message)
-        {
-            if (message.To == User.Me)
-            {
-                App.Current.Dispatcher.Invoke(
-                (Action)delegate ()
-                {
-                    OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message, HorizontalAlignment.Left));
-                });
-            }//接受到的的消息
-            else
-            {
-                App.Current.Dispatcher.Invoke(
-                    (Action)delegate ()
-                {
-                    OutBox.Children.Add(new StormChatWPF.UI.ChatBubble(message, HorizontalAlignment.Right));
-                });
-            }//发送的的消息
-        }//将消息展现于UI界面
+        
 
         private void button_Click_1(object sender, RoutedEventArgs e)
         {
@@ -108,5 +114,25 @@ namespace StormChatWPF
         }
 
         event LoadFinish MainWindowLoad;
+
+        private void MenuItem_Settings_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Settings");
+        }
+
+        private void Menu_Initialized(object sender, EventArgs e)
+        {
+            this.image.ContextMenu = null;
+        }
+
+        private void Menu_MouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            
+            this.Menu.PlacementTarget = this.image;
+            //位置
+            this.Menu.Placement = PlacementMode.Top;
+            //显示菜单
+            this.Menu.IsOpen = true;
+        }
     }
 }

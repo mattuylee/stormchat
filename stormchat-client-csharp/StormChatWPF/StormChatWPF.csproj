@@ -70,8 +70,8 @@
       <DependentUpon>Contacts.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\ContactsInfo.cs" />
-    <Compile Include="UI\UserMeHeadInfo.xaml.cs">
-      <DependentUpon>UserMeHeadInfo.xaml</DependentUpon>
+    <Compile Include="UI\DropDownMenu.xaml.cs">
+      <DependentUpon>DropDownMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
@@ -96,7 +96,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\UserMeHeadInfo.xaml">
+    <Page Include="UI\DropDownMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Style.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

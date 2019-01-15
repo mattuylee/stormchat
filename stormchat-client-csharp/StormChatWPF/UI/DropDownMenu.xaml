@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="StormChatWPF.UI.DropDownMenu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:StormChatWPF.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="30" d:DesignWidth="30">
+	<Grid>
+		<ComboBox x:Name="comboBox" Style="{StaticResource DropDownMenu}" Margin="-48,-7,37,-4"/>
+		<Image x:Name="image" HorizontalAlignment="Left" Height="30" Margin="-44,-40,0,0" VerticalAlignment="Top" Width="30"/>
+	</Grid>
+</UserControl>

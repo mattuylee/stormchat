@@ -6,30 +6,42 @@
         xmlns:local="clr-namespace:StormChatWPF"
 		xmlns:my="clr-namespace:StormChatWPF.UI"
         mc:Ignorable="d"
-        Title="StormChat" Height="450" Width="800"
-		WindowStartupLocation="CenterScreen">
-	<Grid>
+        Title="StormChat" Height="600" Width="850"
+		WindowStartupLocation="CenterScreen"
+		Icon="UI/Resources/闪电.png">
+	<Grid Margin="0,0,0,0">
 		<Grid.RowDefinitions>
 			<RowDefinition Height="60*"/>
 			<RowDefinition Height="300*"/>
-			<RowDefinition Height="90*"/>
+			<RowDefinition Height="100*"/>
 		</Grid.RowDefinitions>
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="200*"/>
+			<ColumnDefinition Width="60*"/>
+			<ColumnDefinition Width="140*"/>
 			<ColumnDefinition Width="200*"/>
 			<ColumnDefinition Width="200*"/>
 			<ColumnDefinition Width="200*"/>
 		</Grid.ColumnDefinitions>
-		<ListView x:Name="UsersList" Margin="0,0,0,0" IsEnabled="True" SelectionChanged="UsersList_SelectionChanged" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="198"/>
-		<TextBox x:Name="InputBox" Margin="200,0,0,0" TextWrapping="Wrap" Text="" Grid.Row="2" Grid.ColumnSpan="4" />
-		<Button Content="Send" HorizontalAlignment="Right" Margin="0,0,0,0" VerticalAlignment="Bottom" Width="75" Click="Button_Click" Height="20" Grid.Row="2" Grid.Column="3"/>
-		<ScrollViewer Grid.ColumnSpan="3" Grid.Column="1" Margin="0,0,0,0" Grid.Row="1" >
+		<ListView x:Name="UsersList" IsEnabled="True" SelectionChanged="UsersList_SelectionChanged" Grid.Row="1" Grid.RowSpan="2" HorizontalAlignment="Left" Width="206" Grid.ColumnSpan="2" Margin="0,10,0,0" />
+		<TextBox x:Name="InputBox" TextWrapping="Wrap" Text="" Grid.Row="2" Grid.ColumnSpan="3" Grid.Column="2" Height="109" VerticalAlignment="Bottom" Margin="10,0,10,5" />
+		<Button Content="Send" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="75" Click="Button_Click" Height="20" Grid.Row="2" Grid.Column="4" Margin="0,0,10,10"/>
+		<ScrollViewer Grid.ColumnSpan="3" Grid.Column="2" Grid.Row="1" BorderThickness="1">
 			<ScrollViewer.Content>
 				<StackPanel x:Name="OutBox" Margin="0,0,0,0" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
 			</ScrollViewer.Content>
 		</ScrollViewer>
-		<Image x:Name="User_HeadPicture" HorizontalAlignment="Left" Width="60" VerticalAlignment="Stretch"/>
-		<Label x:Name="User_NickNmae" Content="Label" Margin="0,10,0.4,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Right" Width="140" FontSize="18" Height="30" VerticalAlignment="Top"/>
-		<Label x:Name="User_motto" Content="人生很长，慢慢走。" Margin="0,40,0.4,0" VerticalContentAlignment="Top" HorizontalAlignment="Right" Width="138" FontSize="6"/>
+		<Image x:Name="User_HeadPicture" VerticalAlignment="Stretch" Margin="0,10,0,0"/>
+		<Label x:Name="User_NickNmae" Content="小施" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" Grid.Column="1" HorizontalAlignment="Left" Width="115" Margin="5,10,0,25"/>
+		<Label x:Name="User_motto" Content="别寻事惹非" Margin="5,54,0,0" VerticalContentAlignment="Center" FontSize="6" Grid.Column="1" HorizontalAlignment="Left" Width="143"/>
+		<Image x:Name="image" Grid.Column="2"  Height="54" Margin="53,10,106,10"  Width="51" Source="UI/Resources/闪电.png" Visibility="Visible" Stretch="Fill">
+			<Image.ContextMenu>
+				<ContextMenu x:Name="Menu" Initialized="Menu_Initialized" MouseLeftButtonUp="Menu_MouseLeftButtonDown">
+					<MenuItem Header="Settings" Click="MenuItem_Settings_Click"/>
+					<MenuItem Header="SignOut"/>
+				</ContextMenu>
+			</Image.ContextMenu>
+		</Image>
+
+
 	</Grid>
 </Window>
